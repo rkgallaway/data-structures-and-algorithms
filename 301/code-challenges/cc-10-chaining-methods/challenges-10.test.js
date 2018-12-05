@@ -30,7 +30,21 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
-//split into individual arrays, then reduce to add each idx to the other, then add those numbers and return a total
+  let singleArray = [];
+  let numberTotal = 0;
+
+  for (let i in input){
+    for (let j in input[i]){
+      singleArray.push(input[i][j]);//this combines into 1 array
+    };
+  };
+  // return singleArray;
+  for (let s in singleArray)
+    numberTotal += parseInt(singleArray[s], 10);
+  return numberTotal;
+
+
+  //split into individual arrays, then reduce to add each idx to the other, then add those numbers and return a total
 
 };
 
@@ -80,7 +94,7 @@ let starWarsData = [{
   skin_color: 'gold',
   eye_color: 'yellow',
   birth_year: '112BBY',
-  gender: 'n/a'
+  gender: 'n/a',
 },
 {
   name: 'R2-D2',
@@ -90,7 +104,7 @@ let starWarsData = [{
   skin_color: 'white, blue',
   eye_color: 'red',
   birth_year: '33BBY',
-  gender: 'n/a'
+  gender: 'n/a',
 },
 {
   name: 'Darth Vader',
@@ -100,7 +114,7 @@ let starWarsData = [{
   skin_color: 'white',
   eye_color: 'yellow',
   birth_year: '41.9BBY',
-  gender: 'male'
+  gender: 'male',
 },
 {
   name: 'Leia Organa',
@@ -110,13 +124,24 @@ let starWarsData = [{
   skin_color: 'light',
   eye_color: 'brown',
   birth_year: '19BBY',
-  gender: 'female'
-}]
+  gender: 'female',
+}];
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
   //if male push to maleArray, else if female push to femaleArray.  then write a template literal to return a string
-}
+  let maleAndFemale = [];
+  for (let d in data){
+    if (data[d].gender === 'male' || 'female'){
+      maleAndFemale.push(data[d].name);
+    }
+  }
+  return maleAndFemale;
+  let newArray = maleAndFemale.split(' '); //not working but will give it some more thought
+  let finishedArr = newArray.join(' and ');
+  console.log(finishedArr);
+
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -127,7 +152,14 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 let findShortest = (data) => {
   // Solution code here...
   //reduce split'' to get into letters in individual array, count number of elements in array, and return the shortest that is put back together into one original word.  maybe a fster way, but this would work
-}
+
+  let names = [];
+  for (let i in data){
+    Math.min(data[i].height) //need to sorrespond this to the name of the character
+
+  }
+  return names;
+};
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -149,12 +181,12 @@ describe('Testing challenge 1', () => {
   test('It should work on empty arrays', () => {
     expect(count(5, [[1, 3, 5, 7, 9], [], [5, 5, 5], [1, 2, 3], []])).toStrictEqual(4);
     expect(count(5, [])).toStrictEqual(0);
-  })
+  });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should add all the numbers in the arrays', () => {
-    const nums = [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]];
+    const nums = [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6]];
 
     expect(totalSum(nums)).toStrictEqual(66);
   });
@@ -174,14 +206,14 @@ xdescribe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return only characters that are male or female', () => {
     expect(findMaleAndFemale(starWarsData)).toStrictEqual('Luke Skywalker and Darth Vader and Leia Organa');
-    expect(findMaleAndFemale([{ name: 'person', gender: 'female' }, { gender: 'lol' }, { name: 'persontwo', gender: 'male' }])).toStrictEqual('person and persontwo');
+    expect(findMaleAndFemale([{ name: 'person', gender: 'female', }, { gender: 'lol', }, { name: 'persontwo', gender: 'male', }])).toStrictEqual('person and persontwo');
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return the name of the shortest character', () => {
     expect(findShortest(starWarsData)).toStrictEqual('R2-D2');
   });
