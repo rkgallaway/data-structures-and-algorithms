@@ -155,7 +155,7 @@ let findShortest = (data) => {
 
   let names = [];
   for (let i in data){
-    Math.min(data[i].height) //need to sorrespond this to the name of the character
+    Math.min(data[i].height) //need to correspond this to the name of the character
 
   }
   return names;
