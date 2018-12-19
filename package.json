@@ -1,0 +1,23 @@
+{
+  "name": "data-structures-and-algorithms",
+  "version": "1.0.0",
+  "description": "data structures and algoritms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkgallaway/data-structures-and-algorithms.git"
+  },
+  "author": "Ryan Gallaway",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rkgallaway/data-structures-and-algorithms/issues"
+  },
+  "homepage": "https://github.com/rkgallaway/data-structures-and-algorithms#readme",
+  "dependencies": {
+    "eslint": "^5.10.0",
+    "jest": "^23.6.0"
+  }
+}
