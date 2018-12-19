@@ -9,7 +9,7 @@ Write a function called BinarySearch which takes in 2 parameters: a sorted array
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-declared function binarySearch, passed in an array and search key.  Iterate over array, if search key present, return the index where found.  If search key not present, return the value -1.
+declared function binarySearch, passed in an array and search key.  Iterate over array, if search key present, return the index where found.  If search key not present, return the value -1. Tested to make sure array with key inclusion, key exclusion, and confirmed that input array does not contain an object.
 
 
 ## Solution
