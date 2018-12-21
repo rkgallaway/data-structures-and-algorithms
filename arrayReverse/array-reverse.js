@@ -6,7 +6,7 @@ function reverseArray(inArray){
   }
   let newArray = [];
   let counter = 0;
-  for (let i = inArray.length; i <= 0; i--){
+  for (let i = inArray.length - 1; i >= 0; i--){
     newArray[counter] = inArray[i];
     counter++;
   };

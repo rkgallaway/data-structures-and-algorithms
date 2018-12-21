@@ -19,4 +19,3 @@ binExport.binarySearch = (arr, val) => {
   };
   return output;
 };
-
