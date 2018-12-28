@@ -25,7 +25,7 @@ Created Node Class and Linked List class. <!--stuck and need to figure this out 
 * .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
 * .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
 ## Approach & Efficiency
-* Paired with Jon DiQuattro.  He is stronger on linked lists than I and this was a great experience
+* Paired with Jon DiQuattro.  He is stronger on linked lists than I and this was a great experience.  I was able to learn a significant amount.
 
 ## Solution
 ![Whiteboard image](assets/ll-insertions.jpg)
