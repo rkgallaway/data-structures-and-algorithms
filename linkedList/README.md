@@ -14,3 +14,18 @@ Created Node Class and Linked List class. <!--stuck and need to figure this out 
 * Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
 * Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
 * Define a method called print which takes in no arguments and outputs all of the current Node values in the Linked List.
+
+
+# Linked List Insertions
+<!-- Short summary or background information -->
+
+## Challenge
+####Write the following methods for the Linked List class:
+* .append(value) which adds a new node with the given value to the end of the list
+* .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+* .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+## Approach & Efficiency
+* Paired with Jon DiQuattro.  He is stronger on linked lists than I and this was a great experience
+
+## Solution
+![Whiteboard image](assets/ll-insertions.jpg)
