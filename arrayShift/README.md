@@ -12,4 +12,4 @@ We declared a function that iterated thru an array, inserted the same value into
 
 
 ## Solution
-![Whiteboard image](assets/array-shift.jpg)
+![Whiteboard image](assets/array-shift-edited.jpg)
