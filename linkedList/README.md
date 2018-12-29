@@ -19,7 +19,7 @@ Created Node Class and Linked List class. <!--stuck and need to figure this out 
 # Linked List Insertions
 <!-- Short summary or background information -->
 
-## Challenge
+## Code Challenge 06
 ####Write the following methods for the Linked List class:
 * .append(value) which adds a new node with the given value to the end of the list
 * .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
@@ -29,3 +29,18 @@ Created Node Class and Linked List class. <!--stuck and need to figure this out 
 
 ## Solution
 ![Whiteboard image](assets/ll-insertions.jpg)
+
+# Singly Linked List
+<!-- Short summary or background information -->
+
+## Code Challenge 07
+<!-- Description of the challenge -->
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+## API
+<!-- Description of each method publicly available to your Linked List -->
+
+## Solution
+<!-- ![Whiteboard image](assets/ll-insertions.jpg)  insert cc-07 image -->
