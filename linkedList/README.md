@@ -43,4 +43,4 @@ Created Node Class and Linked List class. <!--stuck and need to figure this out 
 <!-- Description of each method publicly available to your Linked List -->
 
 ## Solution
-<!-- ![Whiteboard image](assets/ll-insertions.jpg)  insert cc-07 image -->
+![Whiteboard image](assets/ll-kth-from-end.jpg)
