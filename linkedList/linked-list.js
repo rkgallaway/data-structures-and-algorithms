@@ -7,8 +7,8 @@ class Node{
   constructor(value){
     this.value = value;
     this.next = null;
-  };
-};
+  }
+}
 
 //created linked list class
 class LinkedList{
@@ -62,18 +62,18 @@ class LinkedList{
     let current = this.head;
     while(current.next){
       current = current.next;
-    };
+    }
     let newNode = new Node(value);
     current.next = newNode;
     Node.next = null;
-  };
+  }
 
   insertBefore(value, newVal){
     let current = this.head;
     while(current.next){
       if(current.next.value === value){
         break;
-      };
+      }
       current = current.next;
     }
     if(current.next === null){
@@ -83,17 +83,17 @@ class LinkedList{
       let newNode = new Node(newVal);
       newNode.next = current.next;
       current.next = newNode;
-    };
-  };
+    }
+  }
 
   insertAfter(value, newVal){
     let current = this.head;
     while(current.next){
       if(current.value === value){
         break;
-      };
+      }
       current = current.next;
-    };
+    }
     if(current.next === null){
       console.log('value does not exist');
     }
@@ -101,8 +101,8 @@ class LinkedList{
       let newNode = new Node(newVal);
       newNode.next = current.next;
       current.next = newNode;
-    };
-  };
+    }
+  }
 
   kthFromEnd(k){
     let arrayOfValues = [];
@@ -111,10 +111,10 @@ class LinkedList{
     while(current.next){
       arrayOfValues.push(current.value);
       current = current.next;
-    };
+    }
     return arrayOfValues[arrayOfValues.length - (k + 1)];
   }
-};
+}
 
 let list = new LinkedList();
 list.add('Ryan');
@@ -125,7 +125,11 @@ list .add('Scamper');
 list.insert('mom');
 console.log(list.includes('Amy'));
 list.insertBefore('Amy', 42);
+list.insertBefore('jo', 42);
+list.insertAfter('jo', 'dog');
 list.append('Shana');
 list.insertAfter('Wiener', 'dog');
 list.print();
 console.log(list.kthFromEnd(3));
+
+module.exports = LinkedList;
