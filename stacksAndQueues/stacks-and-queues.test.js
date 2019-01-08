@@ -43,3 +43,18 @@ describe('stacks-and-queues.js tests', () => {
     });
   });
 });
+
+describe('Queue tests', () => {
+  it('Creates an Instance', () => {
+    let queue = new StacksAndQueues.Queue();
+    expect(queue instanceof StacksAndQueues.Queue).toBeTruthy();
+  });
+  describe('enqueue method', () => {
+    it('returns null on an empty queue', () => {
+      let queue = new StacksAndQueues.Queue();
+      expect(queue instanceof StacksAndQueues.Queue).toEqual(Error);
+    });
+  });
+});
+
+
