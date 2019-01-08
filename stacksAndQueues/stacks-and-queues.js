@@ -11,7 +11,7 @@ class Node{
    */
   constructor(value){
     this.value = value;
-    this.previous = null;
+    this.next = null;
   }
 }
 
@@ -25,28 +25,34 @@ class Stack{
   }
   push(value){
     let node = new Node(value);
-    node.previous = this.top;
+    node.next = this.top;
     this.top = node;
   }
   pop(){
-    let newTop = this.previous;
+    if(this.top === null){
+      throw new Error('nothing to pop on an empty stack');
+    }
     let temp = this.top;
+    let newTop = this.top.next;
     this.top = newTop;
     return temp; //????  test - not sure
     //removes node from top  //just remove reference to it?
   }
   peek(){
+    if(this.top === null){
+      throw new Error('nothing to peek at on an empty stack');
+    }
     return this.top.value;
   }
-  print(){
-    let current = this.top;
-    while (current) {
-      console.log(current.value);
-      current = current.previous;
-    }
-  }
+  // print(){
+  //   let current = this.top;
+  //   while (current) {
+  //     current = current.next;
+  //     console.log(current.value);
+  //   }
+  // }
 }
-
+//above is working!!!!!
 class Queue{
   /**
    *Creates an instance of Queue.
@@ -58,7 +64,7 @@ class Queue{
   enqueue(value){
     let node = new Node(value);
     if(!this.front){
-      node.front = node;
+      this.front = node;
     } else{
       let queuedNode = this.front;
       while(queuedNode.next){
@@ -70,38 +76,53 @@ class Queue{
     //adds value to the back of queue
   }
   dequeue(){
-    let newFront = this.next;
+    if(this.front === null){
+      throw new Error('nothing to dequeue from on an empty queue');
+    }
+    let newFront = this.front.next;
     let temp = this.front;
     this.front = newFront;
-    return temp; //????  test - not sure
+    return temp.value; //????  test - not sure
 
     //remove node from front of queue
   }
   peek(){
     return this.front;
   }
+  // print(){
+  //   let current = this.front;
+  //   while (current.next) {
+  //     current = current.next;
+  //     console.log(current.value);
+  //   }
+  // }
 }
 
-let stack = new Stack();
-stack.push(1);
-stack.push(14);
-stack.push(2);
-stack.push(3);
-// stack.peek(); // returning undefined
+// let stack = new Stack();
+// stack.push(1);
+// stack.push(14);
+// stack.push(2);
+// stack.push(3);
+// console.log('this is the log we want', stack.peek()); // returning undefined
 // console.log(util.inspect(stack, {depth: 10,}));
 // stack.pop();  //not working
-stack.print();
+// stack.print();
 
-stack.peek(); // returning undefined
+// stack.peek(); // returning undefined
 // console.log(util.inspect(stack, {depth: 10,}));
+// 
+// let q = new Queue();
+// q.enqueue(1);
+// q.enqueue(2);
+// q.enqueue(3);
+// q.enqueue(4);
+// console.log('this value', q.dequeue());
+// console.log('this value', q.dequeue());
+// console.log('this value', q.dequeue());
+// console.log('this value', q.dequeue());
+// q.print();
+// console.log(util.inspect(q, {depth: 10,}));
 
-let q = new Queue();
-q.enqueue(1);
-q.enqueue(2);
-q.enqueue(3);
-q.enqueue(4);
-console.log(util.inspect(q, {depth: 10,}));
-
-q.peek();
+// q.peek();
 
 module.exports = {Stack, Queue,};
