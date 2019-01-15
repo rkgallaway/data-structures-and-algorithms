@@ -1,46 +1,54 @@
 'use strict';
 
 class Node{
- constructor(value){
+  constructor(value){
     this.value = value;
-  this.left = null;
-  this.right = null;
- }
+    this.left = null;
+    this.right = null;
+  }
 }
 
 class Tree {
-      constructor(){
-   this.root = null;
+  constructor(){
+    this.root = null;
   }
- //traversals
+  //traversals
   
- preOrder() {
-   led nodes = [];
+  preOrder() {
+    let nodes = [];
    
-   let _walk = (node) => {  //base case
-    nodes.push(node.value);    //put break point here in debugger
-    if(node.left){ _walk(node.left); 
-    if(node.right){ _walk(node.right);
-   };
-   return nodes;
+    let _walk = (node) => {  //base case
+      nodes.push(node.value);    //put break point here in debugger
+      if(node.left){
+        _walk(node.left);
+      } 
+      if(node.right){ 
+        _walk(node.right);
+      }
+    };
+    return nodes;
   }
  
- inOrder() {
-   led nodes = [];
+  inOrder(){
+    let nodes = [];
    
-   let _walk = (node) => {  //base case
-    nodes.push(node.value);
-    if(node.left){ _walk(node.left); 
-    nodes.push(node.value);  //all about when you evaluate  //put break point here in debugger
-    if(node.right){ _walk(node.right);
-   };
-   return nodes;
+    let _walk = (node) => {  //base case
+      nodes.push(node.value);
+      if(node.left){ 
+        _walk(node.left);
+      } 
+      nodes.push(node.value);  //all about when you evaluate  //put break point here in debugger
+      if(node.right){
+        _walk(node.right);
+      }
+    };
+    return nodes;
   }
- }
+}
  
- module.exports = Tree;
+module.exports = Tree;
 
- let tree = new Tree();
+let tree = new Tree();
 let a = new Node('a');
 let b = new Node('b');
 let c = new Node('c');
@@ -55,3 +63,6 @@ b.left = e;
 tree.root = a;
 
 console.log(tree.preOrder());
+
+module.exports = {Node, Tree};
+
