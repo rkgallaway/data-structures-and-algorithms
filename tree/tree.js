@@ -8,7 +8,7 @@ class Node{
   }
 }
 
-class Tree {
+class binaryTree {
   constructor(){
     this.root = null;
   }
@@ -43,6 +43,23 @@ class Tree {
       }
     };
     return nodes;
+  }
+  
+  breadthFirst(tree){
+    let arr = [];
+    let breadth = new queue();
+    breadth.enqueue(tree.root);
+    while(breadth.peek){
+      arr.push(breadth.front.value);
+      if(front.left){
+        breadth.enqueue(front.left);
+      }
+      if(front.right){
+        breadth.enqueue(front.right);
+      }
+      breadth.dequeue(front);
+    }
+    return arr;
   }
 }
  
