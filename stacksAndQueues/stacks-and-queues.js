@@ -44,13 +44,13 @@ class Stack{
     }
     return this.top.value;
   }
-  // print(){
-  //   let current = this.top;
-  //   while (current) {
-  //     current = current.next;
-  //     console.log(current.value);
-  //   }
-  // }
+  print(){
+    let current = this.top;
+    while (current) {
+      current = current.next;
+      console.log(current.value);
+    }
+  }
 }
 //above is working!!!!!
 class Queue{
@@ -125,4 +125,4 @@ class Queue{
 
 // q.peek();
 
-module.exports = {Stack, Queue,};
+module.exports = {Stack, Queue};

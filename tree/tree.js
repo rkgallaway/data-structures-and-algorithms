@@ -61,6 +61,28 @@ class binaryTree {
     }
     return arr;
   }
+
+  findMaximumValue(){
+    if (!tree.root){
+      return;}
+    let max = this.root.value;
+    let queue = new queue();
+    queue.enqueue(this.root);
+    while(queue.length){
+      let node = queue.dequeue();
+      if(max < node.value){
+        max = node.value;
+      }
+      if (node.left){
+        queue.enqueue(node.left);
+      }
+      if (node.right){
+        queue.enqueue(node.right);
+      }
+    }
+    return max;
+  }
+  
 }
  
 module.exports = Tree;
