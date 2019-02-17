@@ -21,7 +21,7 @@ class Graph{
 
   addEdge(startNode, endNode, weight = 0){
     if (!this.adjacencyList.has(startNode) || !this.adjacencyList.has(endNode))
-      throw new Error ('Error: invalid node(s)');
+      return 'Error: invalid node(s)';
 
     let adjacencies = this.adjacencyList.get(startNode);
 
@@ -37,13 +37,44 @@ class Graph{
 
   getNeighbors(node){
     if (!this.adjacencyList.has(node))
-      throw new Error ('error: invalid node');
+      return 'Error: invalid node';
 
     return [...this.adjacencyList.get(node)];
   }
 
   size(){
     return this.nodeCount;
+  }
+
+  breadthFirst(startNode) {
+    let queue = [];
+    let visitedNodes = new Set();
+
+    queue.unshift(startNode);
+    visitedNodes.add(startNode);
+
+    if(this.nodeCount === 0){
+      return null;
+    }
+ 
+    while(queue.length){
+      let currentNode = queue.pop();
+      visitedNodes.add(currentNode);
+
+      let neighbors = this.getNeighbors(currentNode);
+
+      for(let neighbor of neighbors){
+        let neighborNode = neighbor.node;
+
+        if(visitedNodes.has(neighborNode))
+          continue;
+        else
+          visitedNodes.add(neighborNode);
+
+        queue.unshift(neighborNode);
+      }
+    }
+    return visitedNodes;
   }
 }
 

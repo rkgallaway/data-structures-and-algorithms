@@ -33,3 +33,17 @@ Utilizes the Single-responsibility principle: any methods written are clean, reu
     * Include the weight of the connection in the returned collection
 5. Size()
     * Returns the total number of nodes in the graph
+
+# Breadth-First Traversal of a Graph
+* Implement a breadth-first traversal on a graph.
+
+
+## Challenge
+* Extend graph object with a breadth-first traversal method that accepts a starting node.
+
+## Approach & Efficiency
+* Due to weather, we were not at school and partnered like normal.  instead of a whiteboard activity I have made attempt to diagram on paper.   
+* Whiteboard wasn't the most productive, leaned on VInicio's reference code for this one
+
+## Solution
+![challenge 31 whitboard image](./assets/codeChallenge31.jpg)
