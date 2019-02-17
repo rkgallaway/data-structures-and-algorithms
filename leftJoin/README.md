@@ -14,4 +14,4 @@
 ## Approach & Efficiency
 * copy first hashtable, if it contains the key from the 2nd hashtable then the coorresponding value is added to the copy of the first hashtable.  If the key does not exist, then we add the value of null to the corrseponding key.  this copy is then returned to complete the task.
 ## Solution
-![challenge 27 whitboard image](./assets/codeChallenge28.jpg)
+![challenge 28 whitboard image](./assets/codeChallenge28.jpg)
