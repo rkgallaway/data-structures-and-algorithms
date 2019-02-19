@@ -1,33 +1,56 @@
 'use strict';
 
-class HashMap{
+const list = require('../linkedList/linked-list.js');
+
+class HashTable{
   constructor(size){
     this. size = size;
     this.map = new Array(size);
   }
-  // turn the key (can be anything) into a number
-  //that number will be 0 - this.size
+
+  add(key, value){
+    let hash = this.hash(key);
+    if (!this.map[hash]){this.map[hash] = new list.LinkedList();}
+    this.map[hash].append({[key]:value,});
+  }
+
   hash(key){
     let chars = key.split('');
     let aggVal = chars.reduce((accumulator,value) => accumulator + value.charCodeAt(0), 0) % this.size;
     return aggVal % this.size;
-    //return key.split('').reduce((accumulator,value) => a + v.charCodeAt(0), 0) % this.size;
 
   }
 
-  set(key, value){
-    let hash = this.hash(key);
-    console.log(key, hash);
-    if (! this.map[hash]){this.map[hash] = [];}
-    this.map[hash].push({[key]:value,});
+  contains(key){
+    let tempHash = this.hash(key);
+    if (this.map[tempHash]){
+      return (this.search(this.map[tempHash], key) ? true : false);
+    }
+    return false;
   }
 
-  has(value){
-    let hash = this.value;  //need more for solution  // remember ****only conceptual example
+  get(value){
+    let hash = this.value;  
     return this.map[hash].contains
     (value);
   }
+
+  search(linkedList, key){
+    let current = linkedList.head;
+    let object = null;
+    while(current){
+      if (object.key(current.value)[0] === key){ //key or keys
+        return (object = current);
+      }
+      current = current.next;
+    }
+    return object;
+  }
+
 }
 
-let myHash = new HashMap(6);
+let myHash = new HashTable(6);
 myHash.set('John', 'Dad');
+
+
+module.exports = HashTable;
