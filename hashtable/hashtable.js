@@ -49,8 +49,4 @@ class HashTable{
 
 }
 
-let myHash = new HashTable(6);
-myHash.set('John', 'Dad');
-
-
 module.exports = HashTable;
