@@ -2,6 +2,9 @@
 
 
 function mergeSort (arr){
+  if (!arr.length){
+    return 'paramater must be an array';
+  }
   if (arr.length === 1){
     return arr;
   }
