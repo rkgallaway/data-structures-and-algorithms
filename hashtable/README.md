@@ -1,20 +1,20 @@
 # Hashtables
-Implement a Hashtable with methods:
+Create a hashtable
 ## Challenge
-<!-- Description of the challenge -->
+Implement a Hashtable with methods:
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+I relied on John's solution code and Collaborated with Brent Woddward
 
 ## API
 1. add()
-  * takes in both the key and value. This method should hash the key, and add the key and value pair to the table, handling collisions as needed.
+    * takes in both the key and value. This method should hash the key, and add the key and value pair to the table, handling collisions as needed.
 2. get()
-  * takes in the key and returns the value from the table.
+    * takes in the key and returns the value from the table.
 3. contains()
-  * takes in the key and returns a boolean, indicating if the key exists in the table already.
+    * takes in the key and returns a boolean, indicating if the key exists in the table already.
 4. hash()
-  * takes in an arbitrary key and returns an index in the collection.
+    * takes in an arbitrary key and returns an index in the collection.
 
 ### Write tests to prove the following functionality:
 
