@@ -13,7 +13,6 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
   let regex = /\d/gm;
   return regex.test(input);
 };
@@ -27,7 +26,6 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
   let regex = /[A-Z]\w*/gm;
   return str.match(regex);
 
@@ -40,13 +38,13 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
-  // create new array, find cities [A-J], and stuff them into it
-  newArr = [];
-  let regex = /[A-J]\w*/gm;
-  arr.match(regex);
-  newArr.push(regex);
-
+  let arr1 = [];
+  for (let i in arr){
+    if ((/(^[A-J])/g).test(arr[i])) {
+      arr1.push(arr[i]);
+    }
+  }
+  return arr1;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -62,13 +60,8 @@ Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
 const matchMonth = (input) => {
-  // Solution code here...
-  //return true = .test(regex); similar to Hannahs 'han' example in class.  need to sort and not care about case, get oc and then the rest of word
-  let regex = /[oc]\w*/gm;
-//need to address caps issue.  ddoesn't matter if all caps or not
-  
+  let regex = /^[Oo]ct(ober)?$/gm;
   return regex.test(input);
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,12 +75,7 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 ------------------------------------------------------------------------------------------------ */
 
 const noPunctuation = str => {
-  // Solution code here...
-  //not sure what this is asking.  
-  //run a test on 'str'?  grab the bits followed by a space and turn them into pbjects?
-  const name = new type(arguments);
-
-  
+  return str.match(/\w+\s/g);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -103,10 +91,9 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 ------------------------------------------------------------------------------------------------ */
 
 let hangman = (str) => {
-  // Solution code here...
-  regex = /[aeiou]/gm //not all, but if one.... and then insert _
-  // so if an aeiou, insert_
+  return str.replace(/[aeiou]/g, '_');
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -121,8 +108,16 @@ Hint: All of these words end with the letters "ells".
 const seashells = 'She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I\'m sure she sells seashore shells.';
 
 const findShells = (str) => {
-  // Solution code here...
+  let arr = [];
+  let newArr = str.match(/\w+/g);
+  newArr.forEach(value => {
+    if (value.match(/ells+/g)) {
+      arr.push(value);
+    }
+  });
+  return arr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
