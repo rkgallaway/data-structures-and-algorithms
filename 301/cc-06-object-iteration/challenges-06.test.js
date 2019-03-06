@@ -151,9 +151,23 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 
 const houseSize = (arr) => {
   const sizes = [];
+  let houseMembers = 0;
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i].name){
+      houseMembers++;
+    }
+    if (arr[i].spouse !== null){
+      houseMembers++;
+    }
+    if (arr[i].children.length > 0){
+      houseMembers = houseMembers + arr[i].children.length;
+    }
+    sizes.push({house: arr[i].house, members: houseMembers,});
+    houseMembers = 0;
+  };
   // Solution code here...
   return sizes;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -174,10 +188,24 @@ For example: [ { house: 'Stark', members: 6 }, { house: 'Arryn', members: 2 }, .
 const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
-  const survivors = [...arr];
+  const survivors = [];
+  let houseMembers = 0;
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i].name){
+      houseMembers++;
+    }
+    if (arr[i].spouse !== null && !deceasedSpouses.includes(arr[i].spouse)){
+      houseMembers++;
+    }
+    if (arr[i].children.length > 0){
+      houseMembers = houseMembers + arr[i].children.length;
+    }
+    survivors.push({house: arr[i].house, members: houseMembers,});
+    houseMembers = 0;
+  };
   // Solution code here...
   return survivors;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
