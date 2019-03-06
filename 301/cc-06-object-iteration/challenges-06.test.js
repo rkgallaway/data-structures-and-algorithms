@@ -13,7 +13,7 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 
 const getCourseKeys = (obj) => {
   // Solution code here...
-  return Object.keys(courseInfo);
+  return Object.keys(obj);
   // for (let keys in obj){
   //   console.log(keys, person);
 };
@@ -73,7 +73,7 @@ let characters = [
 
 const totalCharacters = (arr) => {
   // Solution code here...
-  return characters.length;
+  return arr.length;
 
 };
 
@@ -86,11 +86,11 @@ Write a function named getHouses that returns a new array containing the names o
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
-  for (let i in characters){
-    houses.push(characters[i].house);
+  for (let i in arr){
+    houses.push(arr[i].house);
   }
   return houses;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -105,16 +105,14 @@ hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-  for (let i in characters){
-    if(characters[i].children !== []){
-      return true;
-    } if (characters[i].children === []){
-      return false;
+  let answer = false;
+  arr.forEach(value => {
+    if (value.name === character){
+      answer = value.children.length > 0;
     }
-  }
-  //basically we want to say if the children array is populated, then they have children and === true, if not then return false
-}
+  });
+  return answer;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -125,8 +123,21 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
-}
+  let kids = false;
+  arr.forEach(obj => {
+    let correctChar = false;
+    Object.entries(obj).forEach(pair => {
+      if (pair[0] === 'name' && pair[1] === character) {
+        correctChar = true;
+      }
+      if (correctChar && pair[0] === 'children'){
+        correctChar = false;
+        kids = pair[1].length > 0;
+      }
+    });
+  });
+  return kids;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
@@ -163,7 +174,7 @@ For example: [ { house: 'Stark', members: 6 }, { house: 'Arryn', members: 2 }, .
 const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
-  const survivors = [];
+  const survivors = [...arr];
   // Solution code here...
   return survivors;
 }
@@ -208,7 +219,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenEntries(characters, 'Eddard')).toBeTruthy();
   });
@@ -218,14 +229,14 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return an object for each house containing the name and size', () => {
     expect(houseSize(characters)).toStrictEqual([ { house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, { house: 'Lannister', members: 5 }, { house: 'Targaryen', members: 5 }, { house: 'Tyrell', members: 4 }, { house: 'Stark', members: 2 }, { house: 'Snow', members: 1 } ]);
     expect(houseSize(characters).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should not include any deceased spouses', () => {
     expect(houseSurvivors(characters)).toStrictEqual([ { house: 'Stark', members: 6 }, { house: 'Arryn', members: 2 }, { house: 'Lannister', members: 4 }, { house: 'Targaryen', members: 4 }, { house: 'Tyrell', members: 3 }, { house: 'Stark', members: 2 }, { house: 'Snow', members: 1 } ]);
   });
