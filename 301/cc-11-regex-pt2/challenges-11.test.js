@@ -33,7 +33,8 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // Solution code here...
-  let validator = /@, ./;
+  // return /^[a-z0-9]+\.?[a-z0-9]+@\w+\.(com|net|org)$/.test(email);
+  let validator = /^[a-z0-9]+\.?[a-z0-9]+@\w+\.(com|net|org)$/;
   // if (email === /@, ./){
   return  validator.test(email);
 };
@@ -61,12 +62,9 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
+  let validator = /(^\(\d{3}\)|^\d{3})\s?-?\d{3}-?\s?\d{4}$/;
 
-  if (phoneNumber === /[0-9]{3}-[0-9]{3}-[0-9]{4}/){
-    return true;
-  }
-  //maybe better to use .test, and try testing for more number entry types
-};
+  return validator.test(phoneNumber);};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4 - Stretch Goal
@@ -78,6 +76,10 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 ------------------------------------------------------------------------------------------------ */
 
 const findTagNames = elements => {
+  return elements.reduce((accumulator, value) =>{
+    accumulator.push(value.match(/\/\b\w*/g));
+    return accumulator;
+  }, []).reduce((accumulator, value) => accumulator.concat(value));
   // Solution code here...
 };
 
