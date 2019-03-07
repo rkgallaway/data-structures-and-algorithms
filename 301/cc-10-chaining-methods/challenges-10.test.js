@@ -12,10 +12,15 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
-  let integerCount = target.forEach(input);  //not working, but my idea is to cycle thru each input looking for the target and adding that to the count. then return count
-  //or set an numbers array to 0, filter thru the arrays and add count at every occurance
-  return integerCount;
+  let count = 0;
+  input.map((arr) =>{
+    arr.map((value) => {
+      if (value === target){
+        count++;
+      }
+    });
+  });
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,6 +66,17 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
+  let output = [];
+  input.map((arr) =>{
+    let temp = [];
+    arr.map((value) =>{
+      if (typeof value === 'number' &&  value % 5 === 0){
+        temp.push(Math.pow(2, value));
+      }
+    });
+    output.push(temp);
+  });
+  return output;
   // Solution code here...
 //   remove divisible by five, if (n % 5 === 0){add to new array} moth.pow 2 to the power of the result (5 or 10 for example)
 };
@@ -128,19 +144,13 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
-  //if male push to maleArray, else if female push to femaleArray.  then write a template literal to return a string
   let maleAndFemale = [];
-  for (let d in data){
-    if (data[d].gender === 'male' || 'female'){
-      maleAndFemale.push(data[d].name);
+  data.map((character) =>{
+    if(character.gender === 'male' || character.gender === 'female'){
+      maleAndFemale.push(character.name);
     }
-  }
-  return maleAndFemale;
-  let newArray = maleAndFemale.split(' '); //not working but will give it some more thought
-  let finishedArr = newArray.join(' and ');
-  console.log(finishedArr);
-
+  });
+  return maleAndFemale.join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -153,12 +163,13 @@ let findShortest = (data) => {
   // Solution code here...
   //reduce split'' to get into letters in individual array, count number of elements in array, and return the shortest that is put back together into one original word.  maybe a fster way, but this would work
 
-  let names = [];
-  for (let i in data){
-    Math.min(data[i].height) //need to correspond this to the name of the character
-
-  }
-  return names;
+  let shortestName;
+  data.map((character) =>{
+    if (!shortestName || character.name.length <= shortestName.length){
+      shortestName = character.name;
+    }
+  });
+  return shortestName;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -192,7 +203,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return numbers divisible by five, then raise two to the power of the resulting numbers', () => {
     expect(divisibleByFiveTwoToThePower([[10, 20, 5, 4], [5, 6, 7, 9], [1, 10, 3]])).toStrictEqual([[1024, 1048576, 32], [32], [1024]]);
   });
