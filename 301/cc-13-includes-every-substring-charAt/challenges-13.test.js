@@ -9,10 +9,11 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  // Solution code here...
-  for (let i in arr){
-    arr[i].substring(0, 1);  //idea here is to grab each instance, then to grab the first character if each instance
-  }
+  return arr.reduce((accumulator, string) =>{
+    let splitArr = string.split('');
+    accumulator.push(splitArr[0]);
+    return accumulator;
+  },[]);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -194,7 +195,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should only return the odd indexed characters from the string', () => {
     expect(onlyOddChars('0123456789')).toStrictEqual('13579');
     expect(onlyOddChars('abcd')).toStrictEqual('bd');
@@ -213,7 +214,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should find all the strings that contain a given string', () => {
     const words = ['things', 'apple (:)', ':)banana', 'missing that thing', 'cant:)aloupe'];
 
@@ -222,7 +223,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should determine whether all the strings contain a given string', () => {
     const words = ['things', 'apple pie (:)', ':)banana pie', 'missing that thing', 'cant:)aloupe is tasty'];
 
@@ -232,7 +233,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should remove Brook from all courses', () => {
     const roster = [
       ['Michelle', 'Allie', 'Brook TESTING'],
@@ -250,7 +251,7 @@ xdescribe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should sort events by the day on which they happen', () => {
     const events = ['Dancing on Mondays and Tuesdays', 'Meet the inventors! Monday, August 7', 'in the club on a Tuesday', 'Thursday Night Code', 'Saturday Night Fever'];
     const sortedEvents = sortByDay(events);
@@ -274,7 +275,7 @@ xdescribe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return the ith character of the ith string', () => {
     const words = ['apple', 'banana', 'cantaloupe'];
 
