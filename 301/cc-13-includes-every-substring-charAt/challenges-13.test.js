@@ -185,6 +185,13 @@ For example, ['abcd', 'efgh', 'ijkl', 'mnop'] returns ['a', 'f', 'k', 'p']
 ------------------------------------------------------------------------------------------------ */
 
 const characterByIndex = (arr) => {
+  let count = 0;
+  return arr.reduce((accumulator, string) =>{
+    let splitArr = string.split('');
+    accumulator.push(splitArr[count]);
+    count++;
+    return accumulator;
+  },[]);
   // Solution code here...
 };
 
