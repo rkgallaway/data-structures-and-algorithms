@@ -25,14 +25,12 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
-  let firstItem = arr[0];
-  let lastItem = arr[arr.length-1];  ///this is a mess.  I'm making it too difficult, moving on
-
-  let newArr = {
-    first : firstItem,
-    last : lastItem
-  };
+  let newArr = [];
+  arr.forEach((string) => {
+    if(string.includes(':)')){
+      newArr.push(string);
+    }
+  });
   return newArr;
 };
 
@@ -45,10 +43,9 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
-  let newArr = [];
-  newArr.push(arr.substring(1,4)); //idea here is to return substring with pieces disected and put back together
-  return newArr;
+  return arr.map((value) => {
+    return value.replace(/[\s()-]/g, '');
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,7 +57,13 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  let newArr = [];
+  for (let i in str){
+    if (i % 2 !== 0){
+      newArr.push(str[i]);
+    }
+  }
+  return newArr.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,9 +74,12 @@ Write a function named allHappy that takes in an array of strings and returns a 
 
 const allHappy = (arr) => {
   // Solution code here...
-  if (arr.includes(':)')){
-    return true;
+  for (let i in arr){
+    if (!arr[i].includes(':)')){
+      return false;
+    }
   }
+  return true;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -83,10 +89,13 @@ Write a function named findAnything that takes in an array of strings, along wit
 ------------------------------------------------------------------------------------------------ */
 
 const findAnything = (arr, target) => {
-  // Solution code here...
-  if (arr.string( ) === target){ //fish for the target, if it exists then return it
-    return target;
-  }
+  let newArr = [];
+  arr.map((string) => {
+    if (string.includes(target)){
+      newArr.push(string);
+    };
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -96,7 +105,12 @@ Write a function named findEvery that takes in an array of strings, along with a
 ------------------------------------------------------------------------------------------------ */
 
 const findEvery = (arr, target) => {
-  // Solution code here...
+  for (let i in arr){
+    if (!arr[i].includes(target)){
+      return false;
+    }
+  }
+  return true;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,7 +126,17 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 ------------------------------------------------------------------------------------------------ */
 
 const unenrollBrook = (arr) => {
-  // Solution code here...
+  let array = [];
+  for (let i in arr){
+    let newArr = [];
+    for (let j in arr[i]){
+      if (!arr[i][j].includes('Brook')){
+        newArr.push(arr[i][j]);
+      }
+    }
+    array.push(newArr);
+  }
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -139,7 +163,17 @@ For example, ['Tuesday', 'Monday', 'Wednesday and Thursday', 'Tuesday 2', 'Thurs
 const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 const sortByDay = (arr) => {
-  // Solution code here...
+  let weekly = [];
+  daysOfWeek.map((day) => {
+    let daily = [];
+    arr.forEach((value) => {
+      if (value.includes(day)){
+        daily.push(value);
+      }
+    });
+    weekly.push(daily);
+  });
+  return weekly;
 };
 
 /* ------------------------------------------------------------------------------------------------
