@@ -7,31 +7,11 @@ Write a function named toTitleCase that takes in an array of strings and returns
 
 For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyver'].
 ------------------------------------------------------------------------------------------------ */
-// reference: https://medium.freecodecamp.org/three-ways-to-title-case-a-sentence-in-javascript-676a9175eb27
-// function titleCase(str) {
-//     str = str.toLowerCase().split(' ');
-//     for (var i = 0; i < str.length; i++) {
-//       str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
-//     }
-//     return str.join(' ');
-//   }
-//   titleCase("I'm a little tea pot");
-// function titleCase(str) {
-//   return str.toLowerCase().split(' ').map(function(word) {
-//     return (word.charAt(0).toUpperCase() + word.slice(1));
-//   }).join(' ');
-// }
+
 const toTitleCase = (arr) => {
-  // Solution code here...
-  return arr.split(' ').map(function(word) {
-    return (word.charAt(0).toUpperCase() + word.slice(1)); //found a couple examples, none working.  not sure what my issue is
-  }).join(' ');
-  // arr = arr.toLowerCase.split(' ');
-  // for (let i in arr){
-  //   arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
-  // }
-  // return arr.join(' ');
+  return arr.map(value => value.replace(/^\w/, value.match(/^\w/)[0].toUpperCase()));
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -105,14 +85,14 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
-  let newArr = [];
-  for (let i in arr){
-     (arr[i].mass > arr[0].mass){
-      newArr.push(arr[i].name);  // do I need a d 2 array that takes for every name also then compare mass?
+  let bigger = [];
+  arr.forEach((person) => {
+    let tempMass = parseInt(person.mass, 10);
+    if (tempMass > 77){
+      bigger.push(person.name);
     }
-  }
-  return newArr;
+  });
+  return bigger.join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -147,8 +127,8 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
 // Solution code here...
-let validator = /[https://]/;
-console.log(validator.test(url));  //not sure why this isn't working
+  let validator = /[https://]/;
+  return validator.test(url);  
 
 };
 
@@ -195,14 +175,14 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return only characters that are bigger than Luke', () => {
     expect(biggerThanLuke(starWarsData)).toStrictEqual('Darth Vader - Pex Kylar');
     expect(biggerThanLuke([])).toStrictEqual('');
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should sort items by a price', () => {
 
     expect(sortBy('price', [
@@ -240,7 +220,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return true if there are three in a row', () => {
     expect(detectTicTacToeWin([['X', '', 'O'], ['X', 'O', ''], ['X', 'O', 'X']])).toStrictEqual(true);
     expect(detectTicTacToeWin([['O', '', 'X'], ['X', 'O', 'X'], ['X', '', 'O']])).toStrictEqual(true);
