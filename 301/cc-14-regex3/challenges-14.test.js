@@ -228,13 +228,13 @@ describe('Testing challenge 3', () => {
   test('It should sort items by a price', () => {
 
     expect(sortBy('price', [
-      {name: 'Sweatshirt', price: 45,},
-      {name: 'Bookmark', price: 2.50,},
-      {name: 'Tote bag', price: 15,}
+      {name: 'Sweatshirt', price: 45},
+      {name: 'Bookmark', price: 2.50},
+      {name: 'Tote bag', price: 15},
     ])).toStrictEqual([
-      {name: 'Bookmark', price: 2.50,},
-      {name: 'Tote bag', price: 15,},
-      {name: 'Sweatshirt', price: 45,}
+      {name: 'Bookmark', price: 2.50},
+      {name: 'Tote bag', price: 15},
+      {name: 'Sweatshirt', price: 45},
     ]);
 
   });
@@ -242,13 +242,13 @@ describe('Testing challenge 3', () => {
   test('It should sort items by name', () => {
 
     expect(sortBy('name', [
-      {name: 'Sweatshirt', price: 45,},
-      {name: 'Bookmark', price: 2.50,},
-      {name: 'Tote bag', price: 15,}
+      {name: 'Sweatshirt', price: 45},
+      {name: 'Bookmark', price: 2.50},
+      {name: 'Tote bag', price: 15},
     ])).toStrictEqual([
-      {name: 'Bookmark', price: 2.50,},
-      {name: 'Sweatshirt', price: 45,},
-      {name: 'Tote bag', price: 15,}
+      {name: 'Bookmark', price: 2.50},
+      {name: 'Sweatshirt', price: 45},
+      {name: 'Tote bag', price: 15},
     ]);
   });
 });

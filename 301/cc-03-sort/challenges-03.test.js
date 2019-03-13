@@ -105,7 +105,7 @@ function Person(firstName, lastName, age) {
 const people = [
   new Person('Wes', 'Washington', 25),
   new Person('Casey', 'Codefellow', 38),
-  new Person('Stan', 'Seattle', 67)
+  new Person('Stan', 'Seattle', 67),
 ];
 
 const sortPeople = (arr) => {
