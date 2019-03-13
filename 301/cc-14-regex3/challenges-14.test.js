@@ -110,8 +110,11 @@ This data could be could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => {
+    return a[property] > b[property];
+  });
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -126,11 +129,9 @@ https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
-// Solution code here...
-  let validator = /[https://]/;
-  return validator.test(url);  
-
+  return /^(https:\/\/)/.test(url);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
@@ -152,6 +153,51 @@ Here is a sample board:
 ------------------------------------------------------------------------------------------------ */
 
 const detectTicTacToeWin = (board) => {
+  let downFromLeft = [];
+  let upFromLeft = [];
+
+  for (let i in board){
+    //row check
+    let row = [];
+    for (let j in board[i]){
+      row.push(board[i][j]);
+    }
+    if (check(row) === true){
+      return true;
+    }
+    //column check
+    let column = [];
+    for (let j in board[i]){
+      column.push(board[j][i]);
+    }
+    if (check(column) === true){
+      return true;
+    }
+    //diagonal check
+    downFromLeft.push(board[i][i]);
+    upFromLeft.push(board[2 - i][i]);
+    if (check(downFromLeft) === true){
+      return true;
+    }
+    if (check(upFromLeft) === true){
+      return true;
+    }
+    return false;
+
+
+  }
+
+  const check = (point) => {
+    if (point[0] === ''){
+      return false;
+    }
+    if (point[0] === point[1] && point[1] === point[2]){
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   // Solution code here...
 };
 
