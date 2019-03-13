@@ -165,6 +165,8 @@ const detectTicTacToeWin = (board) => {
     if (check(row) === true){
       return true;
     }
+  
+    
     //column check
     let column = [];
     for (let j in board[i]){
@@ -173,32 +175,32 @@ const detectTicTacToeWin = (board) => {
     if (check(column) === true){
       return true;
     }
+  
+
     //diagonal check
     downFromLeft.push(board[i][i]);
     upFromLeft.push(board[2 - i][i]);
-    if (check(downFromLeft) === true){
-      return true;
-    }
-    if (check(upFromLeft) === true){
-      return true;
-    }
-    return false;
-
-
   }
 
-  const check = (point) => {
-    if (point[0] === ''){
-      return false;
-    }
-    if (point[0] === point[1] && point[1] === point[2]){
-      return true;
-    } else {
-      return false;
-    }
-  };
+  
+  if (check(downFromLeft) === true){
+    return true;
+  }
+  if (check(upFromLeft) === true){
+    return true;
+  }
+  return false;
+};
 
-  // Solution code here...
+const check = (point) => {
+  if (point[0] === ''){
+    return false;
+  }
+  if (point[0] === point[1] && point[1] === point[2]){
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
