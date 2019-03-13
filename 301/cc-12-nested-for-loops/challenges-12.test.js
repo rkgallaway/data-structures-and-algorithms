@@ -49,7 +49,7 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 const salesData = (hours, data) => {
   let array = [];
   hours.forEach((hour, i) => {
-    array.push({sales: data[i] + ' cookies', time: hour,});
+    array.push({sales: data[i] + ' cookies', time: hour});
   });
   return array;
 };
@@ -62,14 +62,14 @@ Write a function named howManyTreats that will return the quantity of treats you
 
 const errands = [
   { store: 'Grocery store',
-    items: [ { name: 'Eggs', quantity: 12, }, { name: 'Milk', quantity: 1, }, { name: 'Apples', quantity: 3, }],
+    items: [ { name: 'Eggs', quantity: 12 }, { name: 'Milk', quantity: 1 }, { name: 'Apples', quantity: 3 }],
   },
   { store: 'Drug store',
-    items: [ { name: 'Toothpaste', quantity: 1, }, { name: 'Toothbrush', quantity: 3, }, { name: 'Mouthwash',quantity: 1, } ],
+    items: [ { name: 'Toothpaste', quantity: 1 }, { name: 'Toothbrush', quantity: 3 }, { name: 'Mouthwash',quantity: 1 } ],
   },
   { store: 'Pet store',
-    items: [ { name: 'Cans of food', quantity: 8, }, { name: 'Treats', quantity: 24, }, { name: 'Leash', quantity: 1, } ],
-  }
+    items: [ { name: 'Cans of food', quantity: 8 }, { name: 'Treats', quantity: 24 }, { name: 'Leash', quantity: 1 } ],
+  },
 ];
 
 const howManyTreats = (arr) => {
@@ -141,7 +141,7 @@ const weeklyTemperatures = [
   [66, 64, 58, 65, 71, 57, 60],
   [57, 65, 65, 70, 72, 65, 51],
   [55, 54, 60, 53, 59, 57, 61],
-  [65, 56, 55, 52, 55, 62, 57]
+  [65, 56, 55, 52, 55, 62, 57],
 ];
 
 const averageDailyTemperature = (weather) => {
@@ -172,7 +172,7 @@ let lowestWeeklyTemperatureData = [
   [33, 64, 58, 65, 71, 57, 60],
   [40, 45, 33, 53, 44, 59, 48],
   [55, 54, 60, 53, 59, 57, 61],
-  [65, 56, 55, 52, 55, 62, 57]
+  [65, 56, 55, 52, 55, 62, 57],
 ];
 
 const lowestWeeklyAverage = (weather) => {
@@ -240,18 +240,18 @@ describe('Testing challenge 1', () => {
 describe('Testing challenge 2', () => {
   test('It should create an object of data for each store', () => {
     expect(salesData(hoursOpen, grandTotal(cookieStores))).toStrictEqual([
-      { sales: '88 cookies', time: '9 a.m.', },
-      { sales: '153 cookies', time: '10 a.m.', },
-      { sales: '252 cookies', time: '11 a.m.', },
-      { sales: '286 cookies', time: '12 p.m.', },
-      { sales: '139 cookies', time: '1 p.m.', },
-      { sales: '161 cookies', time: '2 p.m.', },
-      { sales: '145 cookies', time: '3 p.m.', },
-      { sales: '232 cookies', time: '4 p.m.', },
-      { sales: '276 cookies', time: '5 p.m.', },
-      { sales: '207 cookies', time: '6 p.m.', },
-      { sales: '161 cookies', time: '7 p.m.', },
-      { sales: '169 cookies', time: '8 p.m.', }
+      { sales: '88 cookies', time: '9 a.m.' },
+      { sales: '153 cookies', time: '10 a.m.' },
+      { sales: '252 cookies', time: '11 a.m.' },
+      { sales: '286 cookies', time: '12 p.m.' },
+      { sales: '139 cookies', time: '1 p.m.' },
+      { sales: '161 cookies', time: '2 p.m.' },
+      { sales: '145 cookies', time: '3 p.m.' },
+      { sales: '232 cookies', time: '4 p.m.' },
+      { sales: '276 cookies', time: '5 p.m.' },
+      { sales: '207 cookies', time: '6 p.m.' },
+      { sales: '161 cookies', time: '7 p.m.' },
+      { sales: '169 cookies', time: '8 p.m.' },
     ]);
 
     expect(salesData(hoursOpen, grandTotal(cookieStores)).length).toStrictEqual(hoursOpen.length);
@@ -270,7 +270,7 @@ describe('Testing challenge 4', () => {
     ['#', ' ', '#', ' '],
     ['#', ' ', '#', ' '],
     ['#', ' ', ' ', ' '],
-    [' ', ' ', '#', '#']
+    [' ', ' ', '#', '#'],
   ];
 
   test('It should return "hit" when it hits a boat', () => {

@@ -41,8 +41,8 @@ const totalSum = (input) => {
   for (let i in input){
     for (let j in input[i]){
       singleArray.push(input[i][j]);//this combines into 1 array
-    };
-  };
+    }
+  }
   // return singleArray;
   for (let s in singleArray)
     numberTotal += parseInt(singleArray[s], 10);
@@ -220,7 +220,7 @@ describe('Testing challenge 3', () => {
 describe('Testing challenge 4', () => {
   test('It should return only characters that are male or female', () => {
     expect(findMaleAndFemale(starWarsData)).toStrictEqual('Luke Skywalker and Darth Vader and Leia Organa');
-    expect(findMaleAndFemale([{ name: 'person', gender: 'female', }, { gender: 'lol', }, { name: 'persontwo', gender: 'male', }])).toStrictEqual('person and persontwo');
+    expect(findMaleAndFemale([{ name: 'person', gender: 'female' }, { gender: 'lol' }, { name: 'persontwo', gender: 'male' }])).toStrictEqual('person and persontwo');
   });
 });
 

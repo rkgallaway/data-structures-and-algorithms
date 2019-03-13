@@ -31,45 +31,45 @@ let characters = [
     name: 'Eddard',
     spouse: 'Catelyn',
     children: ['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon'],
-    house: 'Stark'
+    house: 'Stark',
   },
   {
     name: 'Jon A.',
     spouse: 'Lysa',
     children: ['Robin'],
-    house: 'Arryn'
+    house: 'Arryn',
   },
   {
     name: 'Cersei',
     spouse: 'Robert',
     children: ['Joffrey', 'Myrcella', 'Tommen'],
-    house: 'Lannister'
+    house: 'Lannister',
   },
   {
     name: 'Daenarys',
     spouse: 'Khal Drogo',
     children: ['Drogon', 'Rhaegal', 'Viserion'],
-    house: 'Targaryen'
+    house: 'Targaryen',
   },
   {
     name: 'Mace',
     spouse: 'Alerie',
     children: ['Margaery', 'Loras'],
-    house: 'Tyrell'
+    house: 'Tyrell',
   },
   {
     name: 'Sansa',
     spouse: 'Tyrion',
     children: [],
-    house: 'Stark'
+    house: 'Stark',
   },
   {
     name: 'Jon S.',
     spouse: null,
     children: [],
-    house: 'Snow'
-  }
-]
+    house: 'Snow',
+  },
+];
 
 const totalCharacters = (arr) => {
   // Solution code here...
@@ -162,9 +162,9 @@ const houseSize = (arr) => {
     if (arr[i].children.length > 0){
       houseMembers = houseMembers + arr[i].children.length;
     }
-    sizes.push({house: arr[i].house, members: houseMembers,});
+    sizes.push({house: arr[i].house, members: houseMembers});
     houseMembers = 0;
-  };
+  }
   // Solution code here...
   return sizes;
 };
@@ -200,9 +200,9 @@ const houseSurvivors = (arr) => {
     if (arr[i].children.length > 0){
       houseMembers = houseMembers + arr[i].children.length;
     }
-    survivors.push({house: arr[i].house, members: houseMembers,});
+    survivors.push({house: arr[i].house, members: houseMembers});
     houseMembers = 0;
-  };
+  }
   // Solution code here...
   return survivors;
 };

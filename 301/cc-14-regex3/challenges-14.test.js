@@ -165,8 +165,6 @@ const detectTicTacToeWin = (board) => {
     if (check(row) === true){
       return true;
     }
-  
-    
     //column check
     let column = [];
     for (let j in board[i]){
@@ -175,14 +173,10 @@ const detectTicTacToeWin = (board) => {
     if (check(column) === true){
       return true;
     }
-  
-
     //diagonal check
     downFromLeft.push(board[i][i]);
     upFromLeft.push(board[2 - i][i]);
   }
-
-  
   if (check(downFromLeft) === true){
     return true;
   }
@@ -234,13 +228,13 @@ describe('Testing challenge 3', () => {
   test('It should sort items by a price', () => {
 
     expect(sortBy('price', [
-      {name: 'Sweatshirt', price: 45,},
-      {name: 'Bookmark', price: 2.50,},
-      {name: 'Tote bag', price: 15,}
+      {name: 'Sweatshirt', price: 45},
+      {name: 'Bookmark', price: 2.50},
+      {name: 'Tote bag', price: 15},
     ])).toStrictEqual([
-      {name: 'Bookmark', price: 2.50,},
-      {name: 'Tote bag', price: 15,},
-      {name: 'Sweatshirt', price: 45,}
+      {name: 'Bookmark', price: 2.50},
+      {name: 'Tote bag', price: 15},
+      {name: 'Sweatshirt', price: 45},
     ]);
 
   });
@@ -248,13 +242,13 @@ describe('Testing challenge 3', () => {
   test('It should sort items by name', () => {
 
     expect(sortBy('name', [
-      {name: 'Sweatshirt', price: 45,},
-      {name: 'Bookmark', price: 2.50,},
-      {name: 'Tote bag', price: 15,}
+      {name: 'Sweatshirt', price: 45},
+      {name: 'Bookmark', price: 2.50},
+      {name: 'Tote bag', price: 15},
     ])).toStrictEqual([
-      {name: 'Bookmark', price: 2.50,},
-      {name: 'Sweatshirt', price: 45,},
-      {name: 'Tote bag', price: 15,}
+      {name: 'Bookmark', price: 2.50},
+      {name: 'Sweatshirt', price: 45},
+      {name: 'Tote bag', price: 15},
     ]);
   });
 });
