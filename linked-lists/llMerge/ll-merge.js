@@ -5,6 +5,13 @@ const LinkedList = require('../linked-list.js');
 
 
 function zipList(list1, list2){
+
+  if (list1.head === null){
+    return 'Please enter at least one Linked List as a parameter';
+  }
+  if (!list2 || list2.head){
+    return list1.head;
+  }
   let current1 = list1.head;
   let current2 = list2.head;
   let zippedList = new LinkedList();
