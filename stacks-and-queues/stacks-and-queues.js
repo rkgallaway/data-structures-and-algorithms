@@ -35,12 +35,11 @@ class Stack{
     let temp = this.top;
     let newTop = this.top.next;
     this.top = newTop;
-    return temp; //????  test - not sure
-    //removes node from top  //just remove reference to it?
+    return temp; 
   }
   peek(){
     if(this.top === null){
-      throw new Error('nothing to peek at on an empty stack');
+      return 'nothing to peek at on an empty stack';
     }
     return this.top.value;
   }
@@ -52,7 +51,7 @@ class Stack{
     }
   }
 }
-//above is working!!!!!
+
 class Queue{
   /**
    *Creates an instance of Queue.
@@ -77,52 +76,16 @@ class Queue{
   }
   dequeue(){
     if(this.front === null){
-      throw new Error('nothing to dequeue from on an empty queue');
+      return 'nothing to dequeue from on an empty queue';
     }
     let newFront = this.front.next;
     let temp = this.front;
     this.front = newFront;
-    return temp.value; //????  test - not sure
-
-    //remove node from front of queue
+    return temp.value; 
   }
   peek(){
     return this.front;
   }
-  // print(){
-  //   let current = this.front;
-  //   while (current.next) {
-  //     current = current.next;
-  //     console.log(current.value);
-  //   }
-  // }
 }
-
-// let stack = new Stack();
-// stack.push(1);
-// stack.push(14);
-// stack.push(2);
-// stack.push(3);
-// console.log('this is the log we want', stack.peek()); // returning undefined
-// console.log(util.inspect(stack, {depth: 10,}));
-// stack.pop();  //not working
-// stack.print();
-
-// stack.peek(); // returning undefined
-// console.log(util.inspect(stack, {depth: 10,}));
-// 
-// let q = new Queue();
-// q.enqueue(1);
-// q.enqueue(2);
-// q.enqueue(3);
-// q.enqueue(4);
-// console.log('this value', q.dequeue());
-// console.log('this value', q.dequeue());
-// console.log('this value', q.dequeue());
-// console.log('this value', q.dequeue());
-// q.print();
-// console.log(util.inspect(q, {depth: 10,}));
-
-// q.peek();
 
 module.exports = {Stack, Queue};
