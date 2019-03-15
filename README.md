@@ -1,26 +1,39 @@
 # Data Structures and Algorithims
 
+[![Build Status](https://www.travis-ci.com/rkgallaway/data-structures-and-algorithms.svg?branch=master)](https://www.travis-ci.com/rkgallaway/data-structures-and-algorithms)
+
 **Author**: Ryan Gallaway
 
 ## Overview
-Code challenges completed by Ryan Gallaway during 301d40 and 401d28 at Code Fellows
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+
+* Contains 'code challenges' completed during Code Fellows 301 and 401, along with tests and whiteboard images
+* Contains daily practice and ongoing learning, along with tests and whiteboard images
 
 <!--## Getting Started
 What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 
 ## Architecture
 
-401 code challenges involve paired whiteboarding, with partners documented below and images contained on the respective challenge README.  
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+* 301 Directory:
+  * Contains a variety of array method and regex challenges with in-file course-provided tests as presented during 301d40
+  * Attended Code Fellows 301d40 November 12, 2018 thru December 12, 2018
+  * These files have been revisited both in an effort to practice the material and to successfully pass all tests
+* 401-archive Directory:  
+  * Contains array methods, data structures, and sort methods along with whiteboard images and unique tests from 401d28
+  * The files in this directory have not been revisited and corrected since the original course, once revisited, files will be moved and documented accordingly.
+  * Attended Code Fellows 401d28 December 17, 2018 thru March 1, 2019
+* \_\_tests\_\_ Directory:
+  * Contains tests for all files with the exception of 301 and archive directories
+  * Tests run with jest: `npm test {filename -optional}`
 
 ## 401 Pairings
-Code Challenge 01: Reverse an Array
-    Paired with Hannah Ingham
+* Code Challenge 01: Reverse an Array
+  * Paired with Hannah Ingham
+  COde Challenge 08: Merge two linked Lists
+  * Paired with George Raymond
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource.
 
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
--->
