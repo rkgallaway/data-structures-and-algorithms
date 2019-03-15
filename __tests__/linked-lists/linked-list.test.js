@@ -1,7 +1,8 @@
 'use strict';
 
-const LinkedList = require('./linked-list.js');
-const util = require('util');
+const LinkedList = require('../../linked-lists/linked-list.js');
+
+
 
 describe('Linked List, initial methods from Challenge-05', () =>{		
   it('insert method accepts a string', () =>{
