@@ -1,7 +1,6 @@
 'use strict';
 
-const StacksAndQueues = require('./stacks-and-queues.js');
-const util = require('util');
+const StacksAndQueues = require('../../stacks-and-queues/stacks-and-queues.js');
 
 describe('stacks-and-queues.js tests', () => {
   describe('stack', () => {
@@ -14,7 +13,7 @@ describe('stacks-and-queues.js tests', () => {
     describe('peek()', () => {
       it('returns null on an empty stack', () => {
         let stack = new StacksAndQueues.Stack();
-        expect(stack.peek()).toBeNull();
+        expect(stack.peek()).toEqual('nothing to peek at on an empty stack');
       });
 
       it('returns the top item', () =>{
@@ -49,10 +48,10 @@ describe('Queue tests', () => {
     let queue = new StacksAndQueues.Queue();
     expect(queue instanceof StacksAndQueues.Queue).toBeTruthy();
   });
-  describe('enqueue method', () => {
+  describe('dequeue method', () => {
     it('returns null on an empty queue', () => {
       let queue = new StacksAndQueues.Queue();
-      expect(queue instanceof StacksAndQueues.Queue).toEqual(Error);
+      expect(queue.dequeue()).toEqual('nothing to dequeue from on an empty queue');
     });
   });
 });
