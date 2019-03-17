@@ -30,7 +30,7 @@ class Stack{
   }
   pop(){
     if(this.top === null){
-      throw new Error('nothing to pop on an empty stack');
+      return 'nothing to pop on an empty stack';
     }
     let temp = this.top;
     let newTop = this.top.next;
@@ -42,13 +42,6 @@ class Stack{
       return 'nothing to peek at on an empty stack';
     }
     return this.top.value;
-  }
-  print(){
-    let current = this.top;
-    while (current) {
-      current = current.next;
-      console.log(current.value);
-    }
   }
 }
 
@@ -71,8 +64,6 @@ class Queue{
       }
       queuedNode.next = node;
     }
-
-    //adds value to the back of queue
   }
   dequeue(){
     if(this.front === null){
