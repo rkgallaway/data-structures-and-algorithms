@@ -52,30 +52,32 @@ class Queue{
    */
   constructor(){
     this.front = null;
+    this.back = null;
   }
   enqueue(value){
     let node = new Node(value);
-    if(!this.front){
+    if(!this.front && !this.back){
       this.front = node;
-    } else{
-      let queuedNode = this.front;
-      while(queuedNode.next){
-        queuedNode = queuedNode.next;
-      }
-      queuedNode.next = node;
+      this.back = node;
     }
+    this.back.next = node;
+    this.back = node;
   }
   dequeue(){
-    if(this.front === null){
-      return 'nothing to dequeue from on an empty queue';
+    if (!this.front){
+      return 'nothing to dequeue, queue is empty';
     }
-    let newFront = this.front.next;
-    let temp = this.front;
-    this.front = newFront;
-    return temp.value; 
+    let temp = this.front.value;
+    if (!this.front.next){
+      this.front = null;
+      this.back = null;
+    } else {
+      this.front = this.front.next;
+    }
+    return temp; 
   }
   peek(){
-    return this.front;
+    return this.front.value;
   }
 }
 
