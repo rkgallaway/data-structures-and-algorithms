@@ -1,6 +1,6 @@
 'use strict';
 
-let radixSort = require('./radix-sort.js');
+let radixSort = require('../../sorts/radixSort/radix-sort.js');
 
 describe('Radix Sort Tests:', () => {
   it('works as expected with a populated unsorted array', () => {
