@@ -1,7 +1,7 @@
 'use strict';
 
-const mergeSort = require('./merge-sort.js').mergeSort;
-const merge = require('./merge-sort.js').merge;
+const mergeSort = require('../../sorts/mergeSort/merge-sort.js').mergeSort;
+const merge = require('../../sorts/mergeSort/merge-sort.js').merge;
 
 describe('Merge Sort Tests', () =>{
   it('returns empty array as expected', () =>{

@@ -1,6 +1,6 @@
 'use strict';
 
-let quickSort = require('./quick-sort.js');
+let quickSort = require('../../sorts/quicksort/quick-sort.js');
 
 describe('Quick Sort Test:', () => {
   it('behaves with an empty array', () => {

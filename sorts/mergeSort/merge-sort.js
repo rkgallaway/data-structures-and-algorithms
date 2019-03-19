@@ -19,7 +19,6 @@ function mergeSort (arr){
   );
 }
 
-// compare the arrays item by item and return the concatenated result
 function merge (left, right) {
   let result = [];
   let indexLeft = 0;
@@ -35,7 +34,7 @@ function merge (left, right) {
     }
   }
 
-  return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight))
+  return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight));
 }
 
 const list = [2, 5, 1, 3, 7, 2, 3, 8, 6, 3];
