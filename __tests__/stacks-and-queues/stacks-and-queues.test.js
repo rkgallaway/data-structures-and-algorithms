@@ -88,7 +88,9 @@ describe('Queue tests:', () => {
     it('Removes a single node from the queue and behaves as expected,', () => {
       let queue = new StacksAndQueues.Queue();
       queue.enqueue(1);
+      queue.dequeue();
       expect(queue.dequeue()).toEqual(1);
+      expect(queue.peek()).toEqual(null);
     });
     it('Removes multiple nodes from the queue, in the correct order,', () => {
       let queue = new StacksAndQueues.Queue();
