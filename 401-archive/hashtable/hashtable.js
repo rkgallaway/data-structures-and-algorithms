@@ -1,6 +1,6 @@
 'use strict';
 
-const list = require('../linkedList/linked-list.js');
+const LinkedList = require('../../linked-lists/linked-list.js');
 
 class HashTable{
   constructor(size){
@@ -10,8 +10,8 @@ class HashTable{
 
   add(key, value){
     let hash = this.hash(key);
-    if (!this.map[hash]){this.map[hash] = new list.LinkedList();}
-    this.map[hash].append({[key]:value,});
+    if (!this.map[hash]){this.map[hash] = new LinkedList();}
+    this.map[hash].append({[key]:value});
   }
 
   hash(key){
@@ -31,8 +31,7 @@ class HashTable{
 
   get(value){
     let hash = this.value;  
-    return this.map[hash].contains
-    (value);
+    return this.map[hash].contains(value);
   }
 
   search(linkedList, key){

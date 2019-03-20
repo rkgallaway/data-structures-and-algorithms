@@ -30,3 +30,4 @@ function intersection(treeA,treeB) {
   return duplicates;
 }
 
+module.exports = intersection;
