@@ -1,5 +1,5 @@
 'use strict';
-let PseudoQueue = require('./../queueWithStacks/queue-with-stacks.js');
+let PseudoQueue = require('./queue-with-stacks.js');
 describe('pseudoQueue class', () => {
   it('throws when removing from an empty queue', () => {
     const myQueue = new PseudoQueue();

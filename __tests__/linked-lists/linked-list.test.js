@@ -49,7 +49,7 @@ describe('Linked List, initial methods from Challenge-05', () =>{
   it('includes method must search with one parameter', () =>{
     let testList = new LinkedList();
     testList.add('bananas');
-    expect(console.log(testList.includes())).toEqual(undefined);
+    expect(testList.includes('foo')).toEqual(false);
   });
   it('print method returns list as expected', () =>{
     let newList = new LinkedList();

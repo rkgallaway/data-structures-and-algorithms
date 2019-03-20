@@ -3,9 +3,9 @@
 
 'ust strict';
 
-let FizzBuzzTree = require('../fizz-buzz-tree.js');
-let Tree = require('../../tree/tree.js').Tree;
-let Node = require('../../tree/tree.js').Node;
+let FizzBuzzTree = require('./fizz-buzz-tree.js');
+let Tree = require('../tree/tree.js').Tree;
+let Node = require('../tree/tree.js').Node;
 
 
 describe('fizz-buzz-tree', () => {
@@ -28,7 +28,7 @@ describe('fizz-buzz-tree', () => {
   it('can handle no parameters without errors', () => {
 
     FizzBuzzTree();
-    expect(expected).toEqual(result);
+    expect(FizzBuzzTree()).toEqual(undefined);
   });
 
   it('can handle arguments in the constructor', () => {
@@ -39,11 +39,6 @@ describe('fizz-buzz-tree', () => {
     let result = new Tree(1234);
     expect(expected).toEqual(result);
   });
-});
-
-it('input must contain numbers', () =>{
-  let dog = new Node('Wiener');
-  expect(dog.value).instanceOf('string');
 });
 
 it('correctly changes a tree', () => {

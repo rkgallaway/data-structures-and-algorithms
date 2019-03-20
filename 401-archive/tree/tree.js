@@ -1,5 +1,7 @@
 'use strict';
 
+let Queue = require('../../stacks-and-queues/stacks-and-queues.js');
+
 class Node{
   constructor(value){
     this.value = value;
@@ -8,7 +10,7 @@ class Node{
   }
 }
 
-class binaryTree {
+class Tree {
   constructor(){
     this.root = null;
   }
@@ -47,7 +49,7 @@ class binaryTree {
   
   breadthFirst(tree){
     let arr = [];
-    let breadth = new queue();
+    let breadth = new Queue();
     breadth.enqueue(tree.root);
     while(breadth.peek){
       arr.push(breadth.front.value);

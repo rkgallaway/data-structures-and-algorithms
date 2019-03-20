@@ -1,21 +1,21 @@
 'use strict';
 
-const tree_intersection = require('./../tree-intersection.js');
+const intersection = require('./tree-intersection.js');
 
-const importBinaryTree = require('../data-structures-and-algorithms/code-challenges/tree/tree.js');
-const BinaryTree = importBinaryTree.BinaryTree;
+const importBinaryTree = require('../tree/tree.js');
+const BinaryTree = importBinaryTree.Tree;
 const Node = importBinaryTree.Node;
 
 
 describe('tree intersection function', () => {
   it('returns an empty object when both parameters are undefined', () => {
-    let result = tree_intersection();
+    let result = intersection();
     let expected = {};
     expect(result).toEqual(expected);
   });
 
   it('returns an empty object if either parameter is not of type BinaryTree', () => {
-    let result = tree_intersection(5,5);
+    let result = intersection(5,5);
     let expected = {};
     expect(result).toEqual(expected);
   });
@@ -31,7 +31,7 @@ describe('tree intersection function', () => {
     a.right = c;
     b.left = d;
     
-    let result = tree_intersection(treeA);
+    let result = intersection(treeA);
     let expected = {};
     expect(result).toEqual(expected);
   });
@@ -49,7 +49,7 @@ describe('tree intersection function', () => {
 
     let treeB = new BinaryTree();
 
-    let result = tree_intersection(treeA, treeB);
+    let result = intersection(treeA, treeB);
     let expected = {};
     expect(result).toEqual(expected);
 
@@ -77,7 +77,7 @@ describe('tree intersection function', () => {
     q.right = s;
     r.left = t;
 
-    let result = tree_intersection(treeA, treeB);
+    let result = intersection(treeA, treeB);
     let expected = {};
     expect(result).toEqual(expected);
   });
@@ -104,7 +104,7 @@ describe('tree intersection function', () => {
     q.right = s;
     r.left = t;
 
-    let result = tree_intersection(treeA, treeB);
+    let result = intersection(treeA, treeB);
     let expected = {
       '1': true,
       '2': true,

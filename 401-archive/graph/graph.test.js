@@ -29,9 +29,42 @@ describe ('Graph Class', () =>{
       expect(newGraph.size()).toEqual(0);
       newGraph.addNode(2);
       expect(newGraph.size()).toEqual(1);
-    });  
+    });
+    it('adds single node as expected', () => {
+      let newGraph = new Graph();
+      newGraph.addNode(4);
+      expect(newGraph.breadthFirst(4)).toContain(4);
+    });
+    it('adds mulitple nodes and adds edge as expected ', () => {
+      let newGraph = new Graph();
+      newGraph.addNode(1);
+      newGraph.addNode(2);
+      newGraph.addNode(3);
+      newGraph.addEdge(1, 2);
+      newGraph.addEdge(2, 3);
+      expect(newGraph.breadthFirst(1)).toContain(1, 2, 3);
+    });
+    it('retuns adjency list as expected', () => {
+      let newGraph = new Graph();
+      newGraph.addNode(1);
+      newGraph.addNode(2);
+      newGraph.addNode(3);
+      newGraph.addEdge(1, 2);
+      newGraph.addEdge(2, 3);
+      expect(newGraph.adjacencyList).toBeInstanceOf(Map);
+    });
+    it('retuns adjency list as expected', () => {
+      let newGraph = new Graph();
+      newGraph.addNode(1);
+      newGraph.addNode(2);
+      newGraph.addNode(3);
+      newGraph.addEdge(1, 2);
+      newGraph.addEdge(2, 3);
+      expect(newGraph.getNodes()).toBeInstanceOf(Map);
+    });
+
   });
-  describe ('Breadth First Traversal Tests:', () =>{
+  describe ('Breadth First Traversal and addEdge Tests:', () =>{
     it ('Return nodes visited in order', () =>{
       let graph = new Graph();
       graph.addNode(1);

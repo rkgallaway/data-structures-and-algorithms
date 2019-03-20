@@ -1,38 +1,26 @@
 'use strict';
 
-const LinkedList = require('../../linked-lists/linked-list.js');
-
-
-
-function zipList(list1, list2){
-
-  if (list1.head === null){
-    return 'Please enter at least one Linked List as a parameter';
+function mergeList(list1, list2){
+  if(arguments.length !== 2){
+    return 'you must enter two lists';
   }
-  if (!list2 || list2.head){
-    return list1.head;
-  }
+
   let current1 = list1.head;
   let current2 = list2.head;
-  let zippedList = new LinkedList();
 
-  while(current1.next || current2.next){
-    if(current1.value){
-      zippedList.add(current1.value);
-      current1 = current1.next;
-    } else
-    if(current2.value){
-      zippedList.add(current2.value);
-      current2 = current2.next;
-    }
+  while(current1.next && current2.next){
+    let next1 = current1.next;
+    let next2 = current2.next;
+    current1.next = current2;
+    current2.next = next1;
+    current1 = next1;
+    current2 = next2;
   }
-  if(current1.value){
-    zippedList.add(current1.value);
+  current1.next = current2;
+  if(current2.next){
+    current1.next = current2;
   }
-  if(current2.value){
-    zippedList.add(current2.value);
-    return zippedList.head;
-  }
+  return list1;
 }
 
-module.exports = zipList;
+module.exports = mergeList;

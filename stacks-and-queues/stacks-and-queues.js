@@ -35,7 +35,7 @@ class Stack{
     let temp = this.top;
     let newTop = this.top.next;
     this.top = newTop;
-    return temp; 
+    return temp.value; 
   }
   peek(){
     if(this.top === null){

@@ -5,6 +5,7 @@ function FizzBuzzTree(tree){
   if(!tree.root){
     return;
   }
+
   recursivePostOrderTraversal(tree.root);
   function recursivePostOrderTraversal(node){
     if(node.left){
@@ -13,6 +14,10 @@ function FizzBuzzTree(tree){
     if(node.right){
       recursivePostOrderTraversal(node.right);
     }
+    if(node.value === typeof 'string'){
+      return 'please enter a number';
+    }
+
     if(node.value !== 0){
       if(node.value % 3 === 0 && node.value % 5 === 0 && node.value){
         node.value = 'FizzBuzz';
