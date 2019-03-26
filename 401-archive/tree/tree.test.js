@@ -1,20 +1,20 @@
 'use strict';
 
-const Tree = require('............');
-const Queue = require('.........'); // need to link up tests
-const Node = require('.....');
+const Tree = require('./tree.js').Tree;
+const Queue = require('../../stacks-and-queues/stacks-and-queues.js'); 
+const Node = require('./tree.js').Node;
 
 describe('tree max value', ()=> {
   it('can handle an empty tree', ()=> {
     const myTree = new Tree();    
     expect( () => {
-      myTree.find-max-value();
+      myTree.findMaximumValue();
     }).not.toThrow();
   });
 
   it('can handle an empty tree', ()=> {
     const myTree = new Tree();
-    let result = myTree.find-max-value();  
+    let result = myTree.findMaximumValue();  
     expect(result).toEqual(undefined);
   });
 
@@ -23,7 +23,7 @@ describe('tree max value', ()=> {
     const a = new Node('1');
     myTree.root = a;
 
-    let result = myTree.find-max-value();  
+    let result = myTree.findMaximumValue();  
     expect(result).toEqual(1);
   });
 
@@ -42,7 +42,7 @@ describe('tree max value', ()=> {
     b.right = e;
     e.left = f;
     let expected = 6;
-    let result = myTree.find-max-value();  
+    let result = myTree.findMaximumValue();  
     expect(result).toEqual(expected);
   });
 
@@ -61,7 +61,7 @@ describe('tree max value', ()=> {
     b.right = e;
     e.left = f;
     let expected = -1;
-    let result = myTree.find-max-value();  
+    let result = myTree.findMaximumValue();  
     expect(result).toEqual(expected);
   });
 
