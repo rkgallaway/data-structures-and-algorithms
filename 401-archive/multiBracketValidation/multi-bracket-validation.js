@@ -30,6 +30,8 @@ function mutiBracketValidation(input) {
     default:
       break;
     }
+  }
+  if(parenseCount === 0 && curlyCount === 0 && squareCount === 0){
     return true;
   }
 }

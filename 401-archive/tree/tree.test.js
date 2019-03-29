@@ -1,15 +1,13 @@
 'use strict';
 
 const Tree = require('./tree.js').Tree;
-const Queue = require('../../stacks-and-queues/stacks-and-queues.js'); 
+const Queue = require('../../stacks-and-queues/stacks-and-queues.js').Queue; 
 const Node = require('./tree.js').Node;
 
 describe('tree max value', ()=> {
   it('can handle an empty tree', ()=> {
     const myTree = new Tree();    
-    expect( () => {
-      myTree.findMaximumValue();
-    }).not.toThrow();
+    expect(myTree.findMaximumValue()).toEqual(null);
   });
 
   it('can handle an empty tree', ()=> {
