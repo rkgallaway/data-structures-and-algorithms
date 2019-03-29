@@ -35,7 +35,6 @@ class Tree {
     let nodes = [];
    
     let _walk = (node) => {  //base case
-      nodes.push(node.value);
       if(node.left){ 
         _walk(node.left);
       } 
@@ -47,6 +46,21 @@ class Tree {
     return nodes;
   }
   
+  postOrder(){
+    let nodes = [];
+   
+    let _walk = (node) => {  //base case
+      if(node.left){ 
+        _walk(node.left);
+      } 
+      if(node.right){
+        _walk(node.right);
+      }
+      nodes.push(node.value);  //all about when you evaluate  //put break point here in debugger
+
+    };
+    return nodes;
+  }
   breadthFirst(tree){
     let arr = [];
     let breadth = new Queue();
