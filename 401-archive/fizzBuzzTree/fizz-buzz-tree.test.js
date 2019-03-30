@@ -1,8 +1,5 @@
 'use strict';
 
-
-'ust strict';
-
 let FizzBuzzTree = require('./fizz-buzz-tree.js');
 let Tree = require('../tree/tree.js').Tree;
 let Node = require('../tree/tree.js').Node;
@@ -30,7 +27,15 @@ describe('fizz-buzz-tree', () => {
     FizzBuzzTree();
     expect(FizzBuzzTree()).toEqual(undefined);
   });
-
+  it('modifies tree as expected', () => {
+    FizzBuzzTree(myTree);
+    expect(a.value).toEqual('Buzz');
+    expect(b.value).toEqual(2);
+    expect(c.value).toEqual('FizzBuzz');
+    expect(d.value).toEqual('Fizz');
+    expect(e.value).toEqual(4);
+    expect(f.value).toEqual('Fizz');
+  });
   it('can handle arguments in the constructor', () => {
     let expected =
     {
@@ -47,6 +52,7 @@ it('correctly changes a tree', () => {
   expect( ()=> {
     FizzBuzzTree(myTree2);
   }).not.toThrow();
+  
 });
 
 
