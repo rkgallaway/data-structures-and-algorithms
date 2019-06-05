@@ -1,33 +1,39 @@
 'use strict';
 
-function intersection(treeA,treeB) {
-  let seenValues = {};
-  let duplicates = {};
+const HashTable = require('../hashtable/hashtable.js');
 
-  const _go = (node,cb) => {
-    let current = node;
-    if(current.left){
-      _go(current.left,cb);
+function intersection(treeA, treeB) {
+  let hashmap = new HashTable();
+  let result = [];
+
+  const _walk = node => {
+    if(!hashmap.contains(node.value)){
+      hashmap.add(node.value);
     }
-    if(current.right){
-      _go(current.right, cb);
+    if(node.left){
+      _walk(node.left);
     }
-    cb(seenValues,current.value, duplicates);
+    if(node.right){
+      _walk(node.right);
+    }
   };
 
-  function addToHash(obj, key) {
-    obj[key] = true;
-  }
-
-  function hashContains(obj, key, dupes){
-    if(obj[key]){
-      dupes[key] = true;
+  const _walkCheck = node => {
+    if(hashmap.contains(node.value)){
+      result.push(node.value);
     }
-  }
-  _go(treeA.root, addToHash);
-  _go(treeB.root, hashContains);
+    if(node.left){
+      _walkCheck(node.left);
+    }
+    if(node.right){
+      _walkCheck(node.right);
+    }
+  };
 
-  return duplicates;
+  _walk(treeA.root);
+  _walkCheck(treeB.root);
+  return result;
 }
+
 
 module.exports = intersection;

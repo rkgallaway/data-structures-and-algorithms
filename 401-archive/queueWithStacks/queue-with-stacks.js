@@ -17,7 +17,7 @@ class PsuedoCode {
   dequeue (){
     let temp = 0;
     if(!this.stack1.top){
-      throw new Error('cannot dequeue from empty stack');
+      return 'cannot dequeue from empty stack';
     } else {
       while(this.stack1.top){
         temp = this.stack1.pop();

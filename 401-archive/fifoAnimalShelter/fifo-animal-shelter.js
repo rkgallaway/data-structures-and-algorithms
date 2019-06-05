@@ -20,10 +20,10 @@ class AnimalShelter {
   }
   deQ(preference) {
     if(!this.dog.front) {
-      throw new Error('no dogs');
+      return 'no dogs';
     }
     if(!this.cat.front) {
-      throw new Error('no cats');
+      return 'no cats';
     } else {
       return[preference].dequeue(); 
     }

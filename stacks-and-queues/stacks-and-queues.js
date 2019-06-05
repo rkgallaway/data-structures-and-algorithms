@@ -57,11 +57,11 @@ class Queue{
   enqueue(value){
     let node = new Node(value);
     if(!this.front && !this.back){
-      this.front = node;
+      this.front = node;  
       this.back = node;
     }
-    this.back.next = node;
-    this.back = node;
+    this.back.next = node;  //attaches node to back of queue
+    this.back = node;  //new node is now the back of the queue
   }
   dequeue(){
     if (!this.front){
