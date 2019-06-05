@@ -60,25 +60,25 @@ describe('postOrder tests', () => {
     expect(myTree.postOrder()).toEqual([4, 6, 5, 2, 3, 1]);
   });
 });
-// describe('breadthFirst tests', () => {
+describe('breadthFirst tests', () => {
   
-//   it('works as expected', () => {
-//     const myTree = new Tree();
-//     const a = new Node(1);
-//     const b = new Node(2);
-//     const c = new Node(3);
-//     const d = new Node(4);
-//     const e = new Node(5);
-//     const f = new Node(6);
-//     myTree.root = a;
-//     a.left = b;
-//     a.right = c;
-//     b.left = d;
-//     b.right = e;
-//     e.left = f;
-//     expect(myTree.breadthFirst()).toEqual([4, 6, 5, 2, 3, 1]);
-//   });
-// });
+  it('works as expected', () => {
+    const myTree = new Tree();
+    const a = new Node(1);
+    const b = new Node(2);
+    const c = new Node(3);
+    const d = new Node(4);
+    const e = new Node(5);
+    const f = new Node(6);
+    myTree.root = a;
+    a.left = b;
+    a.right = c;
+    b.left = d;
+    b.right = e;
+    e.left = f;
+    expect(myTree.MYbreadthFirst()).toEqual([4, 6, 5, 2, 3, 1]);
+  });
+});
 
 describe('tree max value', ()=> {
  

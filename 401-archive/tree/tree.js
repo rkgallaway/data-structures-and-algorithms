@@ -66,10 +66,12 @@ class Tree {
 
  
   MYbreadthFirst(){
-    let node = this.root;
+    let nodes = [];
     let breadth = new Queue();
-    breadth.enqueue(node);
+
+    breadth.enqueue(this.root);
     while(breadth.front){
+      nodes.push(breadth.front.value);
       if(breadth.front.left){
         breadth.enqueue(breadth.front.left);
       }
@@ -78,6 +80,7 @@ class Tree {
       }
       breadth.dequeue();
     }
+    return nodes;
   }
 
  
