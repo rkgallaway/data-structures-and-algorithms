@@ -21,10 +21,7 @@ In this alphabetization, capital letters come before lower case letters.
 For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
-const alphabetize = (arr) => {
-  arr.sort();
-  return arr;
-};
+const alphabetize = (arr) => arr.sort();
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -32,13 +29,8 @@ CHALLENGE 3
 Write a function named sortByLength that takes in an array of strings and returns the same array, with the strings sorted by their length, lowest to highest.
 ------------------------------------------------------------------------------------------------ */
 
-const sortByLength = (arr) => {
-  arr.sort(function(a, b) {
-    return a.length > b.length;
-  });
-  return arr;
+const sortByLength = (arr) => arr.sort((a, b) => a.length > b.length);
  
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -48,12 +40,7 @@ Write a function named alphabetizeBetter that takes in an array of strings and r
 For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, and so is ['alphabet', 'Alphabet', 'carrot', 'Zebra'].
 ------------------------------------------------------------------------------------------------ */
 
-const alphabetizeBetter = (arr) => {
-  arr.sort(function(a, b){
-    return a.localeCompare(b);
-  });
-  return arr;
-};
+const alphabetizeBetter = arr => arr.sort((a, b) => a.localeCompare(b));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -68,12 +55,7 @@ Here is an example of the input:
 ];
 ------------------------------------------------------------------------------------------------ */
 
-const sortByPrice = (arr) => {
-  arr.sort(function(a, b) {
-    return a.price > b.price;
-  });
-  return arr;
-};
+const sortByPrice = (arr) => arr.sort((a, b) => a.price > b.price);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -83,12 +65,8 @@ Write a function named sortNumbersByLength that takes in an array of numbers and
 For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
-const sortNumbersByLength = (arr) => {
-  arr.sort(function (a,b){
-    return (a + '').length > (b + '').length;
-  });
-  return arr;
-};
+const sortNumbersByLength = arr => arr.sort( (a,b) => (a.toString()).length - (b.toString()).length);
+
 
 /*-----------------------------------------------------------------------------------------------
 CHALLENGE 7
@@ -162,12 +140,7 @@ const meetings = [
   new Meeting('Friday', '1200', '1345'),
 ];
 
-const sortMeetingsByDay = (arr) => {
-  arr.sort((a, b) => {
-    return weekDAysArray.indexOf(a.dayOfWeek) > weekDAysArray.indexOf(b.dayOfWeek);
-  });
-  return arr;
-};
+const sortMeetingsByDay = (arr) => arr.sort((a, b) => weekDAysArray.indexOf(a.dayOfWeek) > weekDAysArray.indexOf(b.dayOfWeek));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
