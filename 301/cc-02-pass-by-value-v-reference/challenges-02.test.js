@@ -7,7 +7,7 @@ CHALLENGE 1
  Write a function that appends ' The end.' to a string, and returns the modified string. The original source string should not be modified.
  ------------------------------------------------------------------------------------------------ */
 
-const appendTheEnd = (str) => {
+const appendTheEnd = str => {
   // Solution code here...
   str += ' The end.';
   return str;
@@ -23,10 +23,9 @@ appendFirstToLast(a);
 console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
-const appendFirstToLast = (arr) => {
+const appendFirstToLast = arr => {
   // Solution code here...
   arr.push(arr[0]);
-  console.log(arr);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -43,7 +42,6 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 const addBirthYearProperty = (obj, year) => {
   // Solution code here...
   obj.yearBorn = year;
-  console.log(year);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,9 +54,9 @@ setStatusAsAuthor(people);
 console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
-const setStatusAsAuthor = (people) => {
+const setStatusAsAuthor = people => {
   // Solution code here...
-  people.forEach(element => element.isAuthor = true);
+  people.forEach(element => (element.isAuthor = true));
 };
 // help from stackoverflow
 /* ------------------------------------------------------------------------------------------------
@@ -74,7 +72,6 @@ console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
 const append = (arr1, arr2) => arr1.push(...arr2);
- 
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -104,7 +101,7 @@ describe('Testing challenge 2', () => {
 
 describe('Testing challenge 3', () => {
   test('It should add a property to an object', () => {
-    const a = { fullName: 'Octavia Butler', };
+    const a = { fullName: 'Octavia Butler' };
     addBirthYearProperty(a, 1947);
 
     expect(a.yearBorn).toStrictEqual(1947);
@@ -113,7 +110,11 @@ describe('Testing challenge 3', () => {
 
 describe('Testing challenge 4', () => {
   test('It should add a property to every object in an array', () => {
-    const a = [{ fullName: 'Octavia Butler', }, { fullName: 'Ray Bradbury', }, { fullName: 'Kurt Vonnegut', }];
+    const a = [
+      { fullName: 'Octavia Butler' },
+      { fullName: 'Ray Bradbury' },
+      { fullName: 'Kurt Vonnegut' }
+    ];
     setStatusAsAuthor(a);
 
     expect(a[0].isAuthor).toStrictEqual(true);

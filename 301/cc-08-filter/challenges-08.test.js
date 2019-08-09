@@ -40,11 +40,8 @@ Write a function named notInFirstArray that, given two arrays as input, uses fil
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
-const notInFirstArray = (forbiddenValues, arr) => {
-  let results = arr.filter(value => !forbiddenValues.includes(value));
-  return results;
+const notInFirstArray = (forbiddenValues, arr) => arr.filter(value => !forbiddenValues.includes(value));
 
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -85,10 +82,7 @@ const snorlaxData = {
   weight: 4600,
 };
 
-const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  let results = arr.filter(statValue => statValue.baseStat > minBaseStat);
-  return results;
-};
+const getBaseStatGreaterThan = (arr, minBaseStat) => arr.filter(statValue => statValue.baseStat > minBaseStat);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
