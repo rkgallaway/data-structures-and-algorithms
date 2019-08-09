@@ -1,11 +1,10 @@
 'use strict';
 
-
-function mergeSort (arr){
-  if (!arr.length){
+function mergeSort(arr) {
+  if (!arr.length) {
     return 'paramater must be an array';
   }
-  if (arr.length === 1){
+  if (arr.length === 1) {
     return arr;
   }
 
@@ -13,13 +12,10 @@ function mergeSort (arr){
   const left = arr.slice(0, middle);
   const right = arr.slice(middle);
 
-  return merge(
-    mergeSort(left),
-    mergeSort(right)
-  );
+  return merge(mergeSort(left), mergeSort(right));
 }
 
-function merge (left, right) {
+function merge(left, right) {
   let result = [];
   let indexLeft = 0;
   let indexRight = 0;
@@ -37,10 +33,4 @@ function merge (left, right) {
   return result.concat(left.slice(indexLeft)).concat(right.slice(indexRight));
 }
 
-const list = [2, 5, 1, 3, 7, 2, 3, 8, 6, 3];
-console.log(mergeSort(list)); // [ 1, 2, 2, 3, 3, 3, 5, 6, 7, 8 ]
-
-module.exports = {
-  mergeSort,
-  merge,
-};
+module.exports = mergeSort;

@@ -4,7 +4,6 @@ let FizzBuzzTree = require('./fizz-buzz-tree.js');
 let Tree = require('../tree/tree.js').Tree;
 let Node = require('../tree/tree.js').Node;
 
-
 describe('fizz-buzz-tree', () => {
   let a = new Node(5);
   let b = new Node(2);
@@ -15,7 +14,7 @@ describe('fizz-buzz-tree', () => {
 
   const myTree = new Tree();
   myTree.root = a;
-  
+
   a.left = b;
   a.right = c;
   b.left = d;
@@ -23,9 +22,8 @@ describe('fizz-buzz-tree', () => {
   c.right = f;
 
   it('can handle no parameters without errors', () => {
-
     FizzBuzzTree();
-    expect(FizzBuzzTree()).toEqual(undefined);
+    expect(FizzBuzzTree()).toEqual('you must enter one tree');
   });
   it('modifies tree as expected', () => {
     FizzBuzzTree(myTree);
@@ -37,9 +35,8 @@ describe('fizz-buzz-tree', () => {
     expect(f.value).toEqual('Fizz');
   });
   it('can handle arguments in the constructor', () => {
-    let expected =
-    {
-      root: null,
+    let expected = {
+      root: null
     };
     let result = new Tree(1234);
     expect(expected).toEqual(result);
@@ -49,11 +46,7 @@ describe('fizz-buzz-tree', () => {
 it('correctly changes a tree', () => {
   const myTree2 = new Tree();
 
-  expect( ()=> {
+  expect(() => {
     FizzBuzzTree(myTree2);
   }).not.toThrow();
-  
 });
-
-
-

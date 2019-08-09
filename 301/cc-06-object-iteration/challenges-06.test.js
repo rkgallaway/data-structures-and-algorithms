@@ -103,7 +103,7 @@ For example:
 hasChildrenValues(characters, 'Sansa') will return true 
 hasChildrenValues(characters, 'Eddard') will return false
 ------------------------------------------------------------------------------------------------ */
-
+//not correct never change to true
 const hasChildrenValues = (arr, character) => {
   let answer = false;
   arr.forEach(value => {
