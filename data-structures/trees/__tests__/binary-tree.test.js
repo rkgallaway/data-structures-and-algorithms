@@ -72,7 +72,4 @@ describe('BinaryTree tests', () => {
     c.left = f;
     expect(tree.breadthFirst()).toEqual([1, 2, 3, 4, 5, 6]);
   });
-
-
-
 });

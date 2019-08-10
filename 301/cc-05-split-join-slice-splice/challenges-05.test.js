@@ -244,7 +244,7 @@ const extractVowels = (str) => {
     return a > b;
   });
   extractedArr.push(constStringArr.join(''));
-  extractedArr.push(vowelStringArr.join(''));
+  extractedArr.push(vowelStringArr.sort().join(''));
 
   return extractedArr;
 
