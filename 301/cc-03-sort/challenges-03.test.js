@@ -6,10 +6,8 @@ CHALLENGE 1
 Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, highest to smallest.
 ------------------------------------------------------------------------------------------------ */
 
-const sortBackwards = (arr) => {
-  arr.sort(function(a, b){return b > a;});
-  return arr;
-};
+const sortBackwards = (arr) => arr.sort((a, b) =>  b - a);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -29,7 +27,7 @@ CHALLENGE 3
 Write a function named sortByLength that takes in an array of strings and returns the same array, with the strings sorted by their length, lowest to highest.
 ------------------------------------------------------------------------------------------------ */
 
-const sortByLength = (arr) => arr.sort((a, b) => a.length > b.length);
+const sortByLength = (arr) => arr.sort((a, b) => a.length - b.length);
  
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,7 +53,7 @@ Here is an example of the input:
 ];
 ------------------------------------------------------------------------------------------------ */
 
-const sortByPrice = (arr) => arr.sort((a, b) => a.price > b.price);
+const sortByPrice = (arr) => arr.sort((a, b) => a.price - b.price);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -86,13 +84,7 @@ const people = [
   new Person('Stan', 'Seattle', 67),
 ];
 
-const sortPeople = (arr) => {
-  arr.sort(function(a, b) {
-    return a.lastName > b.lastName;
-  });
-  return arr;
-
-};
+const sortPeople = arr => arr.sort((a, b) => a.lastName > b.lastName ? 1 : (a.lastName < b.lastName ? -1 : 0) );
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8
@@ -105,13 +97,13 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  arr.sort(function(a, b){
-    if (a.lastName === b.lastName && a.firstName === b.firstName){
-      return a.age > b.age;
-    } else if (a.lastName === b.lastName){
-      return a.firstName > b.firstName;
+  arr.sort((a, b) => {
+    if (a.lastName !== b.lastName) {
+      return a.lastName > b.lastName ? 1 : -1;
+    } else if (a.firstName !== b.firstName){
+      return a.firstName > b.firstName ? 1 : -1;
     } else {
-      return a.lastName > b.lastName;
+      return a.age - b.age;
     }
   });
   return arr;
@@ -140,7 +132,7 @@ const meetings = [
   new Meeting('Friday', '1200', '1345'),
 ];
 
-const sortMeetingsByDay = (arr) => arr.sort((a, b) => weekDAysArray.indexOf(a.dayOfWeek) > weekDAysArray.indexOf(b.dayOfWeek));
+const sortMeetingsByDay = (arr) => arr.sort((a, b) => weekDAysArray.indexOf(a.dayOfWeek) - weekDAysArray.indexOf(b.dayOfWeek));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -153,16 +145,15 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  arr.sort((a, b) => {
-    if (a.dayOfWeek === b.dayOfWeek && a.start === b.start){
-      return a.end - a.start > b.end - b.start;
-    } else if (a.dayOfWeek === b.dayOfWeek){
-      return a.start > b.start;
-    } else {
-      return weekDAysArray.indexOf(a.dayOfWeek) > weekDAysArray.indexOf(b.dayOfWeek);
-    }
-  });
-  return arr;
+  const daysOfWeek = {
+    Monday: 0,
+    Tuesday: 1,
+    Wednesday: 2,
+    Thursday: 3,
+    Friday: 4,
+  };
+  return arr.sort( (a,b) => (daysOfWeek[a.dayOfWeek] - daysOfWeek[b.dayOfWeek]) || (a.start > b.start ? 1 : (a.start < b.start ? -1 : 0)) || (a.end > b.end ? 1 : (a.end < b.end ? -1 : 0) ));
+  //</solution>
 };
 
 /* ------------------------------------------------------------------------------------------------

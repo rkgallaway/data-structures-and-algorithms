@@ -35,7 +35,7 @@ const addValues = (arr, value) => arr.push(value);
 const addNumbers = (num, arr, times, addValues) => {
   for ( let i = times; i > 0; i--){
     addValues(arr, num);
-  };
+  }
   return arr;
 };
 /* ------------------------------------------------------------------------------------------------
