@@ -3,31 +3,23 @@
 [![Build Status](https://www.travis-ci.com/rkgallaway/data-structures-and-algorithms.svg?branch=master)](https://www.travis-ci.com/rkgallaway/data-structures-and-algorithms)
 
 **Author**: Ryan Gallaway
+## Getting Started
+To install locally, dowload this repository and `npm i` to install jest and eslint.  See local README files for challenge, class and functional details.  Tests run with jest: `npm test <filename -optional>`.  Enjoy, and let me know what you think.  Feedback appreciated! 
 
-## Overview
+## Code Challenges
 
-* Contains 'code challenges' completed during Code Fellows 301 and 401, along with tests and whiteboard images
-* Contains daily practice and ongoing learning, along with tests and whiteboard images
+* 301 Code Challenges:  
+  * [Various array methods, object iteration and regex.](./301-code-challenges/README.md)
+* 401 Code Challenges:
+  * [Array Binary Search](./401-code-challenges/array-binary-search/README.md)
+  * [Array Reverse](./401-code-challenges/array-reverse/README.md)
+  * [Array Shift](./401-code-challenges/array-shift/README.md)
 
-<!--## Getting Started
-What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+## Data Structures
+* [Linked Lists](./data-structures/linked-lists/README.md)
+* [Stacks and Queues](./data-structures/stacks-and-queues/README.md)
+* [Binary and Binary Search Trees](./data-structures/trees/README.md)
+* [Hashtables](./data-structures/linked-lists/README.md)
+* [Graphss](./data-structures/linked-lists/README.md)
 
-## Architecture
-
-* 301 Directory:
-  * Contains a variety of array method and regex challenges with in-file course-provided tests as presented during 301d40
-  * Attended Code Fellows 301d40 November 12, 2018 thru December 12, 2018
-  * These files have been revisited both in an effort to practice the material and to successfully pass all tests
-* 401-archive Directory:  
-  * Contains array methods, data structures, and sort methods along with whiteboard images and unique tests from 401d28
-  * The files in this directory have not been revisited and corrected since the original course, once revisited, files will be moved and documented accordingly.
-  * Attended Code Fellows 401d28 December 17, 2018 thru March 1, 2019
-* \_\_tests\_\_ Directory:
-  * Contains tests for all files with the exception of 301 and archive directories
-  * Tests run with jest: `npm test {filename -optional}`
-
-## 401 Pairings
-* Code Challenge 01: Reverse an Array
-  * Paired with Hannah Ingham
-  COde Challenge 08: Merge two linked Lists
-  * Paired with George Raymond
+Thank you for visiting!

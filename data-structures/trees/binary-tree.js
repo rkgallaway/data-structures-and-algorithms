@@ -57,8 +57,17 @@ class BinaryTree {
     return nodes;
   }
 
-
-
+  findMaximumValue(){
+   
+    let max = 0;
+    let _walk = node => {
+      if(node.value > max) max = node.value;
+      if(node.left) _walk(node.left);
+      if(node.right) _walk(node.right);
+    };
+    _walk(this.root);
+    return max;
+  }
 }
 
 module.exports = BinaryTree;
