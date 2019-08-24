@@ -1,6 +1,6 @@
 'use strict';
 
-const arrayShift = require('../../401-code-challenges/arrayShift/array-shift.js');
+const arrayShift = require('../array-shift.js');
 
 describe ('proof  key-inclusive works', () => {
   it ('works as expected with sorted array and include value', () =>{

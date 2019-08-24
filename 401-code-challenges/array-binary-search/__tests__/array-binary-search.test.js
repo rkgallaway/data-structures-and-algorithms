@@ -1,6 +1,6 @@
 'use strict';
 
-const binarySearch = require('../../401-code-challenges/arrayBinarySearch/array-binary-search.js');
+const binarySearch = require('../array-binary-search.js');
 
 describe ('proof  key-inclusive works', () => {
   it ('works as expected with sorted array and include value', () =>{

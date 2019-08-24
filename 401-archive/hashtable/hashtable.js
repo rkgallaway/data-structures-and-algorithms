@@ -16,14 +16,10 @@ class HashTable {
     this.map[hash].append({ [key]: value });
   }
 
-  hash(key) {
-    let chars = key.split('');
-    let aggVal =
-      chars.reduce(
-        (accumulator, value) => accumulator + value.charCodeAt(0),
-        0
-      ) % this.size;
-    return aggVal % this.size;
+  hash(key) {   
+    return key.split('').reduce((accumulator, value) => {
+      return accumulator + value.charCodeAt(0);
+    },0) * 599 % this.size;
   }
 
   contains(key) {
