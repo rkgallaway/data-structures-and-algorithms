@@ -2,17 +2,24 @@
 
 let HashTable = require('../hashtable.js');
 
-describe('Hashtable tests', () => {
-  it('Creates a new hashtable', () => {
-    let newHash = new HashTable();
-    expect(newHash).toBeInstanceOf(HashTable);
-  });
-  it('Adding a key/value to your hashtable results in the value being in the data structure', () => {
-    let newHash = new HashTable();
-    newHash.add('Ryan', 'TA');
-    expect(newHash.contains(name)).toBeTruthy();
+describe('HashTable tests', () => {
+  it('Can successfully instantiate an empty HashTable', () => {
+    let hash  = new HashTable();
+    expect(hash instanceof HashTable).toBeTruthy();
   });
 });
+
+// describe('Hashtable tests', () => {
+//   it('Creates a new hashtable', () => {
+//     let newHash = new HashTable();
+//     expect(newHash).toBeInstanceOf(HashTable);
+//   });
+//   it('Adding a key/value to your hashtable results in the value being in the data structure', () => {
+//     let newHash = new HashTable();
+//     newHash.add('Ryan', 'TA');
+//     expect(newHash.contains(name)).toBeTruthy();
+//   });
+// });
 
 // Adding a key/value to your hashtable results in the value being in the data structure
 // Retrieving based on a key returns the value stored
