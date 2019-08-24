@@ -12,7 +12,7 @@ describe('animal shelter', () => {
 
     let felix = {
       species: 'cat',
-      name: 'Felix'
+      name: 'Felix',
     };
 
     shelter.enqueue(felix);
@@ -26,15 +26,15 @@ describe('animal shelter', () => {
 
     let felix = {
       species: 'cat',
-      name: 'Felix'
+      name: 'Felix',
     };
     let sativa = {
       species: 'cat',
-      name: 'Sativa'
+      name: 'Sativa',
     };
     let angel = {
       species: 'cat',
-      name: 'Angel'
+      name: 'Angel',
     };
 
     shelter.enqueue(felix);
@@ -52,7 +52,7 @@ describe('animal shelter', () => {
 
     let wiener = {
       species: 'dog',
-      name: 'Wiener'
+      name: 'Wiener',
     };
 
     shelter.enqueue(wiener);
@@ -66,15 +66,15 @@ describe('animal shelter', () => {
 
     let wiener = {
       species: 'dog',
-      name: 'Wiener'
+      name: 'Wiener',
     };
     let diva = {
       species: 'dog',
-      name: 'Diva'
+      name: 'Diva',
     };
     let casey = {
       species: 'dog',
-      name: 'Casey'
+      name: 'Casey',
     };
 
     shelter.enqueue(wiener);
@@ -97,31 +97,40 @@ describe('animal shelter', () => {
 
     let felix = {
       species: 'cat',
-      name: 'Felix'
+      name: 'Felix',
     };
     let sativa = {
       species: 'cat',
-      name: 'Sativa'
+      name: 'Sativa',
     };
     let angel = {
       species: 'cat',
-      name: 'Angel'
+      name: 'Angel',
+    };
+    let wiener = {
+      species: 'dog',
+      name: 'Wiener',
+    };
+    let diva = {
+      species: 'dog',
+      name: 'Diva',
+    };
+    let casey = {
+      species: 'dog',
+      name: 'Casey',
     };
 
+    shelter.enqueue(wiener);
+    shelter.enqueue(diva);
+    shelter.enqueue(casey);
     shelter.enqueue(felix);
     shelter.enqueue(sativa);
     shelter.enqueue(angel);
 
-    let expectedOne = shelter.dequeue('cat');
-    let expectedTwo = shelter.dequeue('cat');
-    let expectedThree = shelter.dequeue('cat');
-    let resultOne = `Congratulations, meet your new cat.  Their name is Felix`;
-    let resultTwo = `Congratulations, meet your new cat.  Their name is Sativa`;
-    let resultThree = `Congratulations, meet your new cat.  Their name is Angel`;
-
-    expect(expectedOne).toEqual(resultOne);
-    expect(expectedTwo).toEqual(resultTwo);
-    expect(expectedThree).toEqual(resultThree);
+    expect(shelter.dequeue('cat')).toEqual('Congratulations, meet your new cat.  Their name is Felix');
+    expect(shelter.dequeue('cat')).toEqual('Congratulations, meet your new cat.  Their name is Sativa');
+    expect(shelter.dequeue('dog')).toEqual('Congratulations, meet your new dog.  Their name is Wiener');
+    expect(shelter.dequeue('dog')).toEqual('Congratulations, meet your new dog.  Their name is Diva');
   });
 
 });

@@ -2,8 +2,8 @@
 
 const intersection = require('./tree-intersection.js');
 
-const Tree = require('../tree/tree.js').Tree;
-const Node = require('../tree/tree.js').Node;
+const Tree = require('../binary-tree.js');
+const Node = require('../node.js');
 
 describe('tree intersection function', () => {
   it('returns an empty object when both parameters are undefined', () => {

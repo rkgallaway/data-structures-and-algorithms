@@ -13,6 +13,10 @@ describe('pseudoQueue class', () => {
     expect(myQueue.dequeue()).toEqual(5);
     expect(myQueue).toBeInstanceOf(PseudoQueue);
   });
+  it('cannot dequeue from an empty psuedoQueue', () => {
+    const myQueue = new PseudoQueue();
+    expect(myQueue.dequeue()).toEqual('cannot dequeue from empty stack');
+  });
   it('can dequeue from a single length queue', () => {
     const myQueue = new PseudoQueue();
     myQueue.enqueue(5);

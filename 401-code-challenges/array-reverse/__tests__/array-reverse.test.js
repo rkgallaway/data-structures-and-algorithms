@@ -1,6 +1,6 @@
 'use strict';
 
-const reverseArray = require('../../401-code-challenges/arrayReverse/array-reverse.js');
+const reverseArray = require('../array-reverse.js');
 
 describe('reverseArray tests', () => {
   it('reverses an array as expected', () => {
